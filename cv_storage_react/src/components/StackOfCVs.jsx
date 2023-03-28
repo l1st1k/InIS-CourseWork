@@ -18,7 +18,7 @@ const StackOfCVs = ({cvs}) => {
             justifyContent="center"
             alignItems="center"
             spacing={1}
-                divider={<Divider orientation="horizontal" flexItem />}
+            divider={<Divider orientation="horizontal" variant="middle" />}
         >
             {cvs.map((cv, index) =>
                 <ShortCV key={cv.cv_id} cv={cv} number={index+1}/>
