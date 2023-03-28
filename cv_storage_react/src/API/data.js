@@ -21,7 +21,7 @@ const cvs = [
         "last_name": "Zhuk",
         "age": 56,
         "major": "DevOps",
-        "years_of_exp": 7
+        "years_of_exp": 0
     },
     {
         "cv_id": "01a32924-a64c-41a0-acc3-c36e17b592e1",

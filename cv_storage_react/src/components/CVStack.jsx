@@ -1,8 +1,8 @@
 import React from 'react';
-import ShortCV from "./ShortCV.jsx";
+import CVShort from "./CVShort.jsx";
 import {Divider, Stack} from "@mui/material";
 
-const StackOfCVs = ({cvs}) => {
+const CVStack = ({cvs}) => {
     if (!cvs.length) {
         return (
             //TODO replace with mui/typography
@@ -17,14 +17,18 @@ const StackOfCVs = ({cvs}) => {
             direction="column"
             justifyContent="center"
             alignItems="center"
-            spacing={1}
-            divider={<Divider orientation="horizontal" variant="middle" />}
+            spacing={2}
+            divider={<Divider
+                orientation="horizontal"
+                variant="middle"
+                flexItem
+            />}
         >
             {cvs.map((cv, index) =>
-                <ShortCV key={cv.cv_id} cv={cv} number={index+1}/>
+                <CVShort key={cv.cv_id} cv={cv} number={index+1}/>
             )}
         </Stack>
     );
 };
 
-export default StackOfCVs;
+export default CVStack;
