@@ -1,4 +1,4 @@
-cvs = [
+const cvs = [
     {
         "cv_id": "c59e21a0-effa-4f69-90b1-8f1bc58cf4f7",
         "first_name": "Aliaksandr",
@@ -31,11 +31,11 @@ cvs = [
         "major": "cartoon developer",
         "years_of_exp": 3
     }
-]
+];
 
 
 
-single_cv_example = {
+const single_cv_example = {
     "cv_id": "21c060bc-5aeb-4109-a2d9-419a88644dd8",
     "first_name": "Daniil",
     "last_name": "Boloshenko",
@@ -46,4 +46,6 @@ single_cv_example = {
     "skills": "js CSS",
     "projects": "finance django website",
     "project_amount": 2
-}
+};
+
+export default {cvs, single_cv_example};
