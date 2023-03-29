@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import {Button, IconButton} from "@mui/material";
+import {Button} from "@mui/material";
 
 const GitHubButton = (props) => {
     const { name, link } = props;

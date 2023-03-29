@@ -4,7 +4,9 @@ import {IconButton} from "@mui/material";
 
 const OpenButton = (cv_id) => {
     return (
-        <IconButton>
+        <IconButton
+            sx={{ color: 'white' }}
+        >
             <OpenInNewIcon/>
         </IconButton>
     );
