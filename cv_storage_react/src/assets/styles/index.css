@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #767676;
+  color: #d2d2d2;
+  background-color: #252525;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,9 +23,13 @@
 .cv-item {
   padding: 15px;
   width: 100%;
-  border: 2px solid #2a4848;
+  border: 2px solid #CECECEDD;
 }
 
 .delete_button {
   float: right;
+}
+
+.footer {
+  background-color: #363636;
 }

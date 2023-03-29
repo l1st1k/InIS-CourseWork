@@ -30,6 +30,14 @@ const cvs = [
         "age": 5,
         "major": "cartoon developer",
         "years_of_exp": 3
+    },
+    {
+        "cv_id": "01a32924-a64c-41a0-acc3-c36e17b000e1",
+        "first_name": "Julia",
+        "last_name": "Mazanchick",
+        "age": 21,
+        "major": "lobster po masti",
+        "years_of_exp": 8
     }
 ];
 
