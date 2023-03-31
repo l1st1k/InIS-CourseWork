@@ -4,7 +4,11 @@ import PropTypes from "prop-types";
 
 const HeaderButton = (props) => {
   const { text } = props;
-  return <Button variant={"text"}>{text}</Button>;
+  return (
+    <Button variant={"text"} sx={{ color: "#d2d2d2" }}>
+      {text}
+    </Button>
+  );
 };
 
 HeaderButton.propTypes = {
