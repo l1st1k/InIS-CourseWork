@@ -34,6 +34,16 @@
   background-color: #363636;
 }
 
+.header {
+  background-color: #363636;
+  align-items: center;
+  width: 100%;
+}
+
+.margin-left-1 {
+  margin-left: 50px;
+}
+
 .footer-stack {
   align-items: center;
 }
