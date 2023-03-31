@@ -14,17 +14,6 @@ import HeaderButton from "../Buttons/HeaderButton.jsx";
 
 const Header = () => {
   return (
-    // <Box className={"header"} component="header">
-    //   {/*<Container maxWidth="lg" sx={{ py: 2 }}>*/}
-    //   {/*  <Stack className={"footer-stack"} direction={"row"} spacing={2}>*/}
-    //   <Logo />
-    //   <Typography variant="h6" align="center" gutterBottom>
-    //     CV Storage
-    //   </Typography>
-    //   {/*  </Stack>*/}
-    //   {/*</Container>*/}
-    // </Box>
-
     <AppBar position="relative">
       <Stack
         className={"header"}
@@ -34,9 +23,14 @@ const Header = () => {
         sx={{ py: 1 }}
       >
         <Divider orientation="vertical" variant="middle" flexItem />
-        <Logo className={"margin-left-1"} />
-
+        <Logo />
         <HeaderButton text={"CV Storage"} />
+        <Divider
+          orientation="vertical"
+          variant="middle"
+          flexItem
+          sx={{ bgcolor: "#d2d2d2", borderRightWidth: 2 }}
+        />
         <HeaderButton text={"Catalog"} />
         <HeaderButton text={"Upload CV"} />
       </Stack>
