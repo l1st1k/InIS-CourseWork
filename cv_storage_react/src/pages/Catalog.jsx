@@ -2,12 +2,13 @@ import CVStack from "../components/CVStack.jsx";
 import cvs from "../API/data.js";
 import Footer from "../components/Footer/Footer.jsx";
 import Header from "../components/Header/Header.jsx";
+import SearchBar from "../components/SearchBar/SearchBar.jsx";
 
 function Catalog() {
   return (
     <>
       <Header />
-      // SearchBar
+      <SearchBar />
       <CVStack cvs={cvs.cvs} />
       <Footer />
     </>
