@@ -33,3 +33,7 @@
 .footer {
   background-color: #363636;
 }
+
+.footer-stack {
+  align-items: center;
+}
