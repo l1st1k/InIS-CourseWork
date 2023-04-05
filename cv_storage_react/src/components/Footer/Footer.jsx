@@ -7,7 +7,7 @@ import Logo from "../Header/Logo.jsx";
 const Footer = () => {
   return (
     <Box className={"footer"} component="footer">
-      <Container maxWidth="lg" sx={{ mt: 3, py: 2 }}>
+      <Container maxWidth="lg" sx={{ py: 2 }}>
         <Stack className={"footer-stack"} direction={"row"} spacing={2}>
           <Logo />
           <Typography variant="h6" align="center" gutterBottom>
