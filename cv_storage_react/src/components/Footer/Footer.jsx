@@ -2,7 +2,7 @@ import React from "react";
 import Copyright from "./Copyright.jsx";
 import { Box, Container, Stack, Typography } from "@mui/material";
 import FooterLinks from "./FooterLinks.jsx";
-import Logo from "../Logo.jsx";
+import Logo from "../Header/Logo.jsx";
 
 const Footer = () => {
   return (

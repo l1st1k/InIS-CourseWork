@@ -8,7 +8,7 @@ import {
   Toolbar,
   Divider,
 } from "@mui/material";
-import Logo from "../Logo.jsx";
+import Logo from "./Logo.jsx";
 import LinkedInButton from "../Buttons/LinkedInButton.jsx";
 import HeaderButton from "../Buttons/HeaderButton.jsx";
 

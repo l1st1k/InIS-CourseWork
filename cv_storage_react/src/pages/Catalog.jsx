@@ -1,4 +1,4 @@
-import CVStack from "../components/CVStack.jsx";
+import CVStack from "../components/CV_Components/CVStack.jsx";
 import cvs from "../API/data.js";
 import Footer from "../components/Footer/Footer.jsx";
 import Header from "../components/Header/Header.jsx";
