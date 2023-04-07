@@ -2,7 +2,7 @@ import React from "react";
 import { Pagination, Stack } from "@mui/material";
 import useStore from "./../../store";
 
-const StyledPagination = ({ totalPages }) => {
+export const StyledPagination = ({ totalPages }) => {
   const { page, setPage } = useStore();
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
@@ -29,5 +29,3 @@ const StyledPagination = ({ totalPages }) => {
     </Stack>
   );
 };
-
-export default StyledPagination;

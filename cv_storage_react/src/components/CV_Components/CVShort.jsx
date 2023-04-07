@@ -1,8 +1,8 @@
 import React from "react";
-import year_to_string from "../../utils/year_to_string.js";
+import { year_to_string } from "../../utils";
 import { DeleteButton, OpenButton, DownloadButton } from "../Buttons";
 
-const CVShort = ({ cv, number }) => {
+export const CVShort = ({ cv, number }) => {
   return (
     <div className={"cv-item"} key={cv.cv_id}>
       <div className="cv__content">
@@ -20,5 +20,3 @@ const CVShort = ({ cv, number }) => {
     </div>
   );
 };
-
-export default CVShort;

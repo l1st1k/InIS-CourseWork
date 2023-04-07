@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-const SearchInput = () => {
+export const SearchInput = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (event) => {
@@ -44,5 +44,3 @@ const SearchInput = () => {
     />
   );
 };
-
-export default SearchInput;

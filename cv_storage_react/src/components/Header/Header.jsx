@@ -1,9 +1,9 @@
 import React from "react";
 import { Stack, AppBar, Divider } from "@mui/material";
-import Logo from "./Logo.jsx";
+import { Logo } from "../Header";
 import { HeaderButton } from "../Buttons";
 
-const Header = () => {
+export const Header = () => {
   return (
     <AppBar position="relative">
       <Stack
@@ -28,5 +28,3 @@ const Header = () => {
     </AppBar>
   );
 };
-
-export default Header;

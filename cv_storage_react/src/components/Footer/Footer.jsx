@@ -1,10 +1,9 @@
 import React from "react";
-import Copyright from "./Copyright.jsx";
 import { Box, Container, Stack, Typography } from "@mui/material";
-import FooterLinks from "./FooterLinks.jsx";
-import Logo from "../Header/Logo.jsx";
+import { Copyright, FooterLinks } from "../Footer";
+import { Logo } from "../Header";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <Box className={"footer"} component="footer">
       <Container maxWidth="lg" sx={{ py: 2 }}>
@@ -20,5 +19,3 @@ const Footer = () => {
     </Box>
   );
 };
-
-export default Footer;

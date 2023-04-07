@@ -1,18 +1,19 @@
 import React from "react";
-import Header from "../components/Header/Header.jsx";
-import { Typography } from "@mui/material";
-import Footer from "../components/Footer/Footer.jsx";
+import { Container, Typography } from "@mui/material";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
-const EmptyCatalog = () => {
+export const EmptyCatalog = () => {
   return (
     <>
-      <Header />
-      <Typography variant="h4" align="center" sx={{ py: 3 }}>
-        На данный момент база резюме пуста!
-      </Typography>
-      <Footer />
+      {/*TODO add flex-container around 3 comps*/}
+      <Container>
+        <Header />
+        <Typography variant="h4" align="center" sx={{ py: 3 }}>
+          На данный момент база резюме пуста!
+        </Typography>
+        <Footer />
+      </Container>
     </>
   );
 };
-
-export default EmptyCatalog;

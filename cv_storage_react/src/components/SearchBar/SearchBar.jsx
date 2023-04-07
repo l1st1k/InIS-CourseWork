@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
-import SearchInput from "./SearchInput.jsx";
+import { SearchInput } from "../SearchBar";
 
-const SearchBar = () => {
+export const SearchBar = () => {
   return (
     <Stack
       display="flex"
@@ -13,5 +13,3 @@ const SearchBar = () => {
     </Stack>
   );
 };
-
-export default SearchBar;

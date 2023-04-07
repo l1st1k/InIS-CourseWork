@@ -1,9 +1,9 @@
 import React from "react";
-import CVShort from "./CVShort.jsx";
+import { CVShort } from "../CV_Components";
 import { Divider, Stack, Typography } from "@mui/material";
 import useStore from "./../../store";
 
-const CVStack = ({ cvs }) => {
+export const CVStack = ({ cvs }) => {
   const { page, cv_per_page } = useStore();
   const start = (page - 1) * cv_per_page;
   const end = start + cv_per_page;
@@ -22,5 +22,3 @@ const CVStack = ({ cvs }) => {
     </Stack>
   );
 };
-
-export default CVStack;

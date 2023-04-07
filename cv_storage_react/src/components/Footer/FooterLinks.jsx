@@ -2,7 +2,7 @@ import React from "react";
 import { GitHubButton, LinkedInButton } from "../Buttons";
 import { Stack } from "@mui/material";
 
-const FooterLinks = () => {
+export const FooterLinks = () => {
   return (
     <Stack direction={"row"} spacing={2} sx={{ my: 3 }}>
       <LinkedInButton />
@@ -17,5 +17,3 @@ const FooterLinks = () => {
     </Stack>
   );
 };
-
-export default FooterLinks;

@@ -1,6 +1,5 @@
 import create from "zustand";
-import get_all_cvs from "../API/get_all_cvs.js";
-import cvs from "../API/data.js";
+import { cvs, get_all_cvs } from "../API";
 
 const useStore = create((set, get) => ({
   cvs: [],

@@ -1,14 +1,13 @@
-import CVStack from "../components/CV_Components/CVStack.jsx";
-import Footer from "../components/Footer/Footer.jsx";
-import Header from "../components/Header/Header.jsx";
-import SearchBar from "../components/SearchBar/SearchBar.jsx";
-import StyledPagination from "../components/Pagination/StyledPagination.jsx";
+import { CVStack } from "../components/CV_Components";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
+import { SearchBar } from "../components/SearchBar";
+import { StyledPagination } from "../components/Pagination";
 import useStore from "./../store";
 import React, { useEffect } from "react";
-import { Typography } from "@mui/material";
-import EmptyCatalog from "./EmptyCatalog.jsx";
+import { EmptyCatalog } from "../pages";
 
-function Catalog() {
+export const Catalog = () => {
   const { cvs, loading, page, number_of_pages } = useStore();
 
   useEffect(() => {
@@ -29,6 +28,4 @@ function Catalog() {
       <Footer />
     </>
   );
-}
-
-export default Catalog;
+};
