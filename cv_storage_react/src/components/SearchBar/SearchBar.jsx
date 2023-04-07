@@ -7,7 +7,7 @@ const SearchBar = () => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      sx={{ my: 2 }}
+      sx={{ my: 3 }}
     >
       <SearchInput />
     </Stack>

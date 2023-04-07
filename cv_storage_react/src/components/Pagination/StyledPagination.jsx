@@ -1,12 +1,17 @@
 import React from "react";
 import { Pagination, Stack } from "@mui/material";
+import useStore from "./../../store";
 
 const StyledPagination = ({ totalPages }) => {
-  const handlePageChange = (event, page) => {};
+  const { page, setPage } = useStore();
+  const handlePageChange = (event, newPage) => {
+    setPage(newPage);
+  };
 
   return (
     <Stack alignItems="center">
       <Pagination
+        page={page}
         onChange={handlePageChange}
         count={totalPages}
         sx={{
