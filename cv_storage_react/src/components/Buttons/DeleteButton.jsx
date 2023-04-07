@@ -3,7 +3,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { IconButton } from "@mui/material";
 import delete_cv from "../../API/delete_cv.js";
 
-const DeleteButton = (cv_id) => {
+export const DeleteButton = (cv_id) => {
   return (
     <IconButton
       sx={{ color: "#d2d2d2" }}
@@ -15,5 +15,3 @@ const DeleteButton = (cv_id) => {
     </IconButton>
   );
 };
-
-export default DeleteButton;

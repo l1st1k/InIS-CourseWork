@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import PropTypes from "prop-types";
 
-const HeaderButton = (props) => {
+export const HeaderButton = (props) => {
   const { text } = props;
   return (
     <Button variant={"text"} sx={{ color: "#d2d2d2" }}>
@@ -14,5 +14,3 @@ const HeaderButton = (props) => {
 HeaderButton.propTypes = {
   text: PropTypes.string.isRequired,
 };
-
-export default HeaderButton;

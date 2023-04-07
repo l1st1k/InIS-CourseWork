@@ -1,28 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import {Button} from "@mui/material";
+import React from "react";
+import PropTypes from "prop-types";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { Button } from "@mui/material";
 
-const GitHubButton = (props) => {
-    const { name, link } = props;
+export const GitHubButton = (props) => {
+  const { name, link } = props;
 
-    return (
-        <Button
-            variant={'contained'}
-            startIcon={<GitHubIcon />}
-            size={'small'}
-            href={link}
-            target="_blank"
-            color={'secondary'}
-        >
-            {name}
-        </Button>
-    );
+  return (
+    <Button
+      variant={"contained"}
+      startIcon={<GitHubIcon />}
+      size={"small"}
+      href={link}
+      target="_blank"
+      color={"secondary"}
+    >
+      {name}
+    </Button>
+  );
 };
 
 GitHubButton.propTypes = {
-    name: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
-
-export default GitHubButton;

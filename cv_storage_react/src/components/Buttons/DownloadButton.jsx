@@ -2,7 +2,7 @@ import React from "react";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import { IconButton } from "@mui/material";
 
-const DownloadButton = (cv_id) => {
+export const DownloadButton = (cv_id) => {
   return (
     <IconButton sx={{ color: "#d2d2d2" }}>
       {/*// TODO add get_csv API call*/}
@@ -11,5 +11,3 @@ const DownloadButton = (cv_id) => {
     </IconButton>
   );
 };
-
-export default DownloadButton;

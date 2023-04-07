@@ -1,8 +1,6 @@
 import React from "react";
 import year_to_string from "../../utils/year_to_string.js";
-import OpenButton from "../Buttons/OpenButton.jsx";
-import DeleteButton from "../Buttons/DeleteButton.jsx";
-import DownloadButton from "../Buttons/DownloadButton.jsx";
+import { DeleteButton, OpenButton, DownloadButton } from "../Buttons";
 
 const CVShort = ({ cv, number }) => {
   return (

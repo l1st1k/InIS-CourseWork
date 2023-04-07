@@ -1,16 +1,7 @@
 import React from "react";
-import {
-  Stack,
-  Container,
-  Typography,
-  Box,
-  AppBar,
-  Toolbar,
-  Divider,
-} from "@mui/material";
+import { Stack, AppBar, Divider } from "@mui/material";
 import Logo from "./Logo.jsx";
-import LinkedInButton from "../Buttons/LinkedInButton.jsx";
-import HeaderButton from "../Buttons/HeaderButton.jsx";
+import { HeaderButton } from "../Buttons";
 
 const Header = () => {
   return (
