@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 import { cvs, get_all_cvs } from "../API";
 
 const useStore = create((set, get) => ({
@@ -32,7 +32,7 @@ const useStore = create((set, get) => ({
     set({ loading: true });
 
     // set({ cvs: await get_all_cvs() });
-    set({ cvs: cvs.cvs });
+    set({ cvs: cvs });
     const page_amount = Math.ceil(get().cvs.length / get().cv_per_page);
     set({ number_of_pages: page_amount });
 

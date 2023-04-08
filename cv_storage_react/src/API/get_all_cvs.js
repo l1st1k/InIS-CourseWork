@@ -1,4 +1,4 @@
-import api from "./api_base.js";
+import { api } from "../API";
 
 export const get_all_cvs = async () => {
   try {

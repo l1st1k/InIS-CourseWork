@@ -1,4 +1,4 @@
-import api from "./api_base.js";
+import { api } from "../API";
 
 export const delete_cv = async (cv_id) => {
   try {
