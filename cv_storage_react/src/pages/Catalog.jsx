@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 
 export const Catalog = () => {
-  const { cvs, searched_cvs, page } = useStore();
+  const { cvs, searched_cvs } = useStore();
 
   useEffect(() => {
     useStore
