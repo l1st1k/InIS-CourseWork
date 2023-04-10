@@ -6,14 +6,14 @@ import React, { useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 
 export const Catalog = () => {
-  const { cvs } = useStore();
+  const { cvs, searched_cvs, page } = useStore();
 
   useEffect(() => {
     useStore
       .getState()
       .fetchCVs()
       .then(() => console.log(`Fetched ${cvs.length} CVs`));
-  }, []);
+  }, [page]);
 
   return (
     <>
@@ -27,7 +27,7 @@ export const Catalog = () => {
       >
         <Header sx={{ flex: "2" }} />
         {cvs.length ? (
-          <CVStack cvs={cvs} sx={{ flex: "10 1" }} />
+          <CVStack cvs={searched_cvs} sx={{ flex: "10 1" }} />
         ) : (
           <Typography
             variant="h4"

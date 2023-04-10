@@ -172,7 +172,7 @@ export const cvs = [
     first_name: "dlfdok;sdfdf",
     last_name: "dfkdf",
     age: 21,
-    major: "lobster po masti",
+    major: "poka po masti",
     years_of_exp: 8,
   },
 ];

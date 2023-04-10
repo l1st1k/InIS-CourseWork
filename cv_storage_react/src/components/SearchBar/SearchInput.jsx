@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import useStore from "../../store";
 
 export const SearchInput = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  useEffect(() => {
+    useStore
+      .getState()
+      .searchCVs(searchTerm)
+      .then(() => console.log(`Searched for: ${searchTerm}`));
+  }, [searchTerm]);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
-    //TODO cvs state change
   };
 
   return (
