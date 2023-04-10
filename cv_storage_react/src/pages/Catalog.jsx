@@ -13,7 +13,7 @@ export const Catalog = () => {
       .getState()
       .fetchCVs()
       .then(() => console.log(`Fetched ${cvs.length} CVs`));
-  }, [page]);
+  }, []);
 
   return (
     <>
