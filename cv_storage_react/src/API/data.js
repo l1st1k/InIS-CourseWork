@@ -167,6 +167,14 @@ export const cvs = [
     major: "lobster po masti",
     years_of_exp: 8,
   },
+  {
+    cv_id: "01a32924-a64c-41a0-acc3-isefjewr",
+    first_name: "dlfdok;sdfdf",
+    last_name: "dfkdf",
+    age: 21,
+    major: "lobster po masti",
+    years_of_exp: 8,
+  },
 ];
 
 export const single_cv_example = {

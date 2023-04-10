@@ -1,31 +1,48 @@
 import { CVStack } from "../components/CV_Components";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { SearchBar } from "../components/SearchBar";
-import { StyledPagination } from "../components/Pagination";
-import useStore from "./../store";
+import useStore from "../store";
 import React, { useEffect } from "react";
-import { EmptyCatalog } from "../pages";
+import { Box, Typography } from "@mui/material";
 
 export const Catalog = () => {
-  const { cvs, loading, page, number_of_pages } = useStore();
+  const { cvs } = useStore();
 
   useEffect(() => {
-    useStore.getState().fetchCVs();
-  }, [page]);
-
-  // Empty Database case
-  if (!cvs.length) {
-    return <EmptyCatalog />;
-  }
+    useStore
+      .getState()
+      .fetchCVs()
+      .then(() => console.log(`Fetched ${cvs.length} CVs`));
+  }, []);
 
   return (
     <>
-      <Header />
-      <SearchBar />
-      <CVStack cvs={cvs} />
-      <StyledPagination totalPages={number_of_pages} />
-      <Footer />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "98vh",
+          justifyContent: "space-between",
+        }}
+      >
+        <Header sx={{ flex: "2" }} />
+        {cvs.length ? (
+          <CVStack cvs={cvs} sx={{ flex: "10 1" }} />
+        ) : (
+          <Typography
+            variant="h4"
+            sx={{
+              py: 3,
+              flex: "10 1",
+              justifyContent: "center",
+              textAlign: "center",
+            }}
+          >
+            На данный момент база резюме пуста!
+          </Typography>
+        )}
+        <Footer sx={{ flex: "2" }} />
+      </Box>
     </>
   );
 };
