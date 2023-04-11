@@ -16,35 +16,6 @@
 .MuiStack-root {
   margin: 0 auto;
   justify-content: center;
-  width: 60%;
-}
-
-.cv-item {
-  padding: 15px;
-  width: 100%;
-  border: 2px solid #CECECEDD;
-}
-
-.delete_button {
-  float: right;
-}
-
-.footer {
-  background-color: #363636;
-}
-
-.header {
-  background-color: #363636;
-  align-items: center;
-  width: 100%;
-}
-
-.margin-left-1 {
-  margin-left: 50px;
-}
-
-.footer-stack {
-  align-items: center;
 }
 
 #search-label {

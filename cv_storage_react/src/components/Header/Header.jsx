@@ -7,11 +7,10 @@ export const Header = () => {
   return (
     <AppBar position="relative">
       <Stack
-        className={"header"}
         direction={"row"}
         spacing={2}
         justifyContent={"left"}
-        sx={{ py: 1 }}
+        sx={{ py: 1, bgcolor: "#363636", alignItems: "center", width: 1 }}
       >
         <Divider orientation="vertical" variant="middle" flexItem />
         <Logo />
