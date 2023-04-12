@@ -24,7 +24,7 @@ export const SearchInput = () => {
       value={searchTerm}
       onChange={handleChange}
       sx={{
-        width: 600,
+        width: 0.35,
         "& .MuiOutlinedInput-notchedOutline": {
           borderColor: "#d2d2d2",
         },
