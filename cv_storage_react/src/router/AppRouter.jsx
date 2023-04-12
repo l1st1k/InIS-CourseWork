@@ -1,7 +1,6 @@
 import React from "react";
-
 import { Navigate, Route, Routes } from "react-router-dom";
-import { routes } from "./index.js";
+import { routes } from "../router";
 
 export const AppRouter = () => {
   // if (loading) {

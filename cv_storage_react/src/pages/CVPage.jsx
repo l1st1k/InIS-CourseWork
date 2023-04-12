@@ -1,9 +1,11 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
-import { Header } from "../components/Header/index.js";
-import { Footer } from "../components/Footer/index.js";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export const CVPage = () => {
+  const { cv_id } = useParams();
   return (
     <>
       <Box
@@ -24,7 +26,7 @@ export const CVPage = () => {
             textAlign: "center",
           }}
         >
-          CV page with detailed information (future)
+          CV page(id = {cv_id} ) with detailed information (future)
         </Typography>
         <Footer sx={{ flex: "2" }} />
       </Box>
