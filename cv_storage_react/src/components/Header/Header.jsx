@@ -14,15 +14,15 @@ export const Header = () => {
       >
         <Divider orientation="vertical" variant="middle" flexItem />
         <Logo />
-        <HeaderButton text={"CV Storage"} />
+        <HeaderButton text={"CV Storage"} link="/" />
         <Divider
           orientation="vertical"
           variant="middle"
           flexItem
           sx={{ bgcolor: "#d2d2d2", borderRightWidth: 2 }}
         />
-        <HeaderButton text={"Catalog"} />
-        <HeaderButton text={"Upload CV"} />
+        <HeaderButton text={"Catalog"} link="/catalog" />
+        <HeaderButton text={"Upload CV"} link="/upload" />
       </Stack>
     </AppBar>
   );

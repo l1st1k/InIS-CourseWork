@@ -38,7 +38,7 @@ export const Catalog = () => {
               textAlign: "center",
             }}
           >
-            На данный момент база резюме пуста!
+            CV Storage is now empty!
           </Typography>
         )}
         <Footer sx={{ flex: "2" }} />
