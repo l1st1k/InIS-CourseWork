@@ -2,11 +2,11 @@ import { api } from "../API";
 
 export const get_all_cvs = async () => {
   try {
-    let response = await api.get("cvs");
+    const response = await api.get("cvs");
     if (response.status !== 200) throw Error(await response.json());
     return response.json();
   } catch (err) {
-    //TODO custom alert on error
+    //TODO custom alerts on every api call
     console.log(err.message);
   }
 };

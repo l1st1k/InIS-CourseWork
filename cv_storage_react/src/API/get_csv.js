@@ -1,9 +1,8 @@
 import { api } from "../API";
 
-export const delete_cv = async (cv_id) => {
+export const get_csv = async (cv_id) => {
   try {
-    const response = await api.delete(`cv/${cv_id}`);
-    //TODO check for backend deletion status code, if its 200
+    const response = await api.get(`cv/${cv_id}/csv`);
     if (response.status !== 200) throw Error(await response.json());
     return response.json();
   } catch (err) {
