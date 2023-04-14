@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack, AppBar, Divider } from "@mui/material";
 import { Logo } from "../Header";
-import { HeaderButton } from "../Buttons";
+import { HeaderButton } from "../UI/Buttons";
 
 export const Header = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { year_to_string } from "../../utils";
-import { DeleteButton, OpenButton, DownloadButton } from "../Buttons";
+import { DeleteButton, OpenButton, DownloadButton } from "../UI/Buttons";
 import { Box, Stack, Typography } from "@mui/material";
 
 export const CVShort = ({ cv, number }) => {

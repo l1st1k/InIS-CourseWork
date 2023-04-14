@@ -1,7 +1,7 @@
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { IconButton } from "@mui/material";
-import { delete_cv } from "../../API";
+import { delete_cv } from "../../../API/index.js";
 
 export const DeleteButton = (cv_id) => {
   return (
