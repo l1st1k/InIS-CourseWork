@@ -37,9 +37,9 @@ const CV_Links = ({ cv_id }) => {
       justifyContent={"end"}
       sx={{ flex: "2" }}
     >
-      <OpenButton cv_id />
-      <DownloadButton cv_id />
-      <DeleteButton cv_id />
+      <OpenButton cv_id={cv_id} />
+      <DownloadButton cv_id={cv_id} />
+      <DeleteButton cv_id={cv_id} />
     </Stack>
   );
 };
