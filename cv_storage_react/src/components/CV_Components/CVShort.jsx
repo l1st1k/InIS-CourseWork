@@ -4,6 +4,7 @@ import { DeleteButton, OpenButton, DownloadButton } from "../UI/Buttons";
 import { Box, Stack, Typography } from "@mui/material";
 
 export const CVShort = ({ cv, number }) => {
+  const filename = `${cv.filename}_${cv.last_name}`;
   return (
     <Box
       component="article"
@@ -24,12 +25,12 @@ export const CVShort = ({ cv, number }) => {
           {year_to_string(cv.years_of_exp)}
         </Typography>
       </Stack>
-      <CV_Links cv_id={cv.cv_id} />
+      <CV_Links cv_id={cv.cv_id} filename={filename} />
     </Box>
   );
 };
 
-const CV_Links = ({ cv_id }) => {
+const CV_Links = ({ cv_id, filename }) => {
   return (
     <Stack
       direction={"row"}
@@ -38,7 +39,7 @@ const CV_Links = ({ cv_id }) => {
       sx={{ flex: "2" }}
     >
       <OpenButton cv_id={cv_id} />
-      <DownloadButton cv_id={cv_id} />
+      <DownloadButton cv_id={cv_id} filename={filename} />
       <DeleteButton cv_id={cv_id} />
     </Stack>
   );
