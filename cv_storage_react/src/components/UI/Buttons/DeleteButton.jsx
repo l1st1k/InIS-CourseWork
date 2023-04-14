@@ -1,6 +1,6 @@
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { IconButton } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
 import { delete_cv } from "../../../API/index.js";
 
 export const DeleteButton = (cv_id) => {
@@ -11,7 +11,9 @@ export const DeleteButton = (cv_id) => {
         await delete_cv(cv_id);
       }}
     >
-      <DeleteIcon />
+      <Tooltip title="Delete" placement="top">
+        <DeleteIcon />
+      </Tooltip>
     </IconButton>
   );
 };
