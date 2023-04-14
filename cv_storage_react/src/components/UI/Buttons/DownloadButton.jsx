@@ -10,8 +10,7 @@ export const DownloadButton = ({ cv_id }) => {
   };
 
   const download_csv = (csv) => {
-    const blob = new Blob([csv], { type: "text/csv" });
-    const url = URL.createObjectURL(blob);
+    const url = URL.createObjectURL(csv);
     const a = document.createElement("a");
     a.href = url;
     a.download = "file.csv";
