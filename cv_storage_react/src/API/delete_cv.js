@@ -1,12 +1,10 @@
 import { api } from "../API";
 
 export const delete_cv = async (cv_id) => {
-  try {
-    const response = await api.delete(`cv/${cv_id}`);
-    //TODO check for backend deletion status code, if its 200
-    if (response.status !== 200) throw Error(await response.json());
-    return response.json();
-  } catch (err) {
-    console.log(err.message);
-  }
+  return new Promise((resolve) =>
+    api
+      .delete(`cv/${cv_id}`)
+      .then((response) => response.json())
+      .then((json) => setTimeout(() => resolve(json), 3000))
+  );
 };
