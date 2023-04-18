@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { delete_cv } from "../../../API";
 import { useToaster } from "../../../hooks";
+import { useStore } from "../../../store";
 
 export const DeleteButton = ({ cv_id }) => {
   const call_delete_cv = useToaster(
@@ -18,7 +19,15 @@ export const DeleteButton = ({ cv_id }) => {
     <>
       <IconButton
         sx={{ color: "#d2d2d2" }}
-        onClick={async () => (await call_delete_cv)()}
+        onClick={async () => {
+          await (
+            await call_delete_cv
+          )();
+          await useStore
+            .getState()
+            .fetchCVs()
+            .then(() => console.log(`Fetched CVs after deleting`));
+        }}
       >
         <Tooltip title="Delete" placement="top">
           <DeleteIcon />
