@@ -16,11 +16,13 @@ export const DeleteButton = ({ cv_id }) => {
     const response = await delete_cv(cv_id);
     response === "Failed"
       ? toast.update(toastId.current, {
+          autoClose: 3000,
           render: "Deletion failed!",
           type: toast.TYPE.ERROR,
           isLoading: false,
         })
       : toast.update(toastId.current, {
+          autoClose: 3000,
           render: "Successfully deleted!",
           type: toast.TYPE.SUCCESS,
           isLoading: false,
@@ -39,7 +41,7 @@ export const DeleteButton = ({ cv_id }) => {
           <DeleteIcon />
         </Tooltip>
       </IconButton>
-      <ToastContainer />
+      <ToastContainer pauseOnFocusLoss pauseOnHover />
     </>
   );
 };
