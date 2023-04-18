@@ -17,16 +17,16 @@ export const DeleteButton = ({ cv_id }) => {
       .then(() => {
         toast.update(toastId.current, {
           render: "Successfully deleted!",
-          type: "success",
-          isLoading: "false",
+          type: toast.TYPE.SUCCESS,
+          isLoading: false,
         });
       })
       .catch(() => {
         console.log("Failed to delete!");
         toast.update(toastId.current, {
           render: "Failed to delete!",
-          type: "error",
-          isLoading: "false",
+          type: toast.TYPE.ERROR,
+          isLoading: false,
         });
       });
   };
