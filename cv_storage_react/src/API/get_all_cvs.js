@@ -1,5 +1,5 @@
 import { api } from "../API";
-
+// Checked - 100%
 export const get_all_cvs = async () => {
   try {
     const response = await api.get("cvs");
