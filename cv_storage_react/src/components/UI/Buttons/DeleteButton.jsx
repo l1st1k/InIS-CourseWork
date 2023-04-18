@@ -13,22 +13,18 @@ export const DeleteButton = ({ cv_id }) => {
       position: toast.POSITION.BOTTOM_RIGHT,
     });
 
-    await delete_cv(cv_id)
-      .then(() => {
-        toast.update(toastId.current, {
+    const response = await delete_cv(cv_id);
+    response === "Failed"
+      ? toast.update(toastId.current, {
+          render: "Deletion failed!",
+          type: toast.TYPE.ERROR,
+          isLoading: false,
+        })
+      : toast.update(toastId.current, {
           render: "Successfully deleted!",
           type: toast.TYPE.SUCCESS,
           isLoading: false,
         });
-      })
-      .catch(() => {
-        console.log("Failed to delete!");
-        toast.update(toastId.current, {
-          render: "Failed to delete!",
-          type: toast.TYPE.ERROR,
-          isLoading: false,
-        });
-      });
   };
 
   return (
