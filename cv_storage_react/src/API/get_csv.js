@@ -7,5 +7,6 @@ export const get_csv = async (cv_id) => {
     return response.blob();
   } catch (err) {
     console.log(err.message);
+    return "Failed";
   }
 };

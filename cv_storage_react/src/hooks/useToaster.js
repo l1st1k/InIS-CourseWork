@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { toast } from "react-toastify";
-
-export const useToaster = async (func, success, failure, params = null) => {
+// TODO use for delete(done) / get_csv / post
+export const useToaster = async (func, success, failure, cv_id) => {
   const toastId = useRef(null);
 
   return async () => {
@@ -9,7 +9,7 @@ export const useToaster = async (func, success, failure, params = null) => {
       position: toast.POSITION.BOTTOM_RIGHT,
     });
 
-    const response = params === null ? await func() : await func(params);
+    const response = await func(cv_id);
     response === "Failed"
       ? toast.update(toastId.current, {
           autoClose: 3000,

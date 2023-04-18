@@ -6,7 +6,6 @@ export const get_all_cvs = async () => {
     if (response.status !== 200) throw Error(await response.json());
     return response.json();
   } catch (err) {
-    //TODO custom alerts on every api call
     console.log(err.message);
   }
 };
