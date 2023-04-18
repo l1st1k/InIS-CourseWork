@@ -9,26 +9,6 @@ const useStore = create((set, get) => ({
   cv_per_page: 10,
   number_of_pages: 1,
 
-  addCV(new_cv) {
-    const cvs = [...get().cvs, new_cv];
-    //TODO post & get_all API call
-    set({ cvs });
-  },
-
-  removeCV(id) {
-    const cvs = get().cvs.filter((cv) => cv.cv_id !== id);
-    //TODO delete & get_all API call
-    set({ cvs });
-  },
-
-  updateCV(id) {
-    const cvs = get().cvs.map((cv) =>
-      cv.cv_id === id ? { ...cv, done: !cv.done } : cv
-    );
-    //TODO patch & get_all API call
-    set({ cvs });
-  },
-
   async fetchCVs() {
     set({ loading: true });
 
