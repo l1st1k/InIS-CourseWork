@@ -9,7 +9,7 @@ export const useToaster = async (func, success, failure, params = null) => {
       position: toast.POSITION.BOTTOM_RIGHT,
     });
 
-    const response = await func(params);
+    const response = params === null ? await func() : await func(params);
     response === "Failed"
       ? toast.update(toastId.current, {
           autoClose: 3000,
