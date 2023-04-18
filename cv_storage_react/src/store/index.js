@@ -57,9 +57,11 @@ const useStore = create((set, get) => ({
     str = str.toLowerCase();
     const searched_cvs = get().cvs.filter(
       (cv) =>
-        cv.first_name.toLowerCase().includes(str) ||
-        cv.last_name.toLowerCase().includes(str) ||
-        cv.major.toLowerCase().includes(str)
+        (
+          cv.first_name.toLowerCase() +
+          " " +
+          cv.last_name.toLowerCase()
+        ).includes(str) || cv.major.toLowerCase().includes(str)
     );
     const page_amount = Math.ceil(searched_cvs.length / get().cv_per_page);
     set({ searched_cvs: searched_cvs });
