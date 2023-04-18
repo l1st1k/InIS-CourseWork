@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import useStore from "../../store";
+import { useStore } from "../../store";
 
 export const SearchInput = () => {
   const [searchTerm, setSearchTerm] = useState("");

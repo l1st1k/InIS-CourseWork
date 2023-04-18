@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { cvs, get_all_cvs } from "../API";
 
-const useStore = create((set, get) => ({
+export const useStore = create((set, get) => ({
   cvs: [],
   searched_cvs: [],
   loading: false,
@@ -53,5 +53,3 @@ const useStore = create((set, get) => ({
     set({ loading: false });
   },
 }));
-
-export default useStore;

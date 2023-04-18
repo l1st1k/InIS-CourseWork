@@ -1,7 +1,7 @@
 import { CVStack } from "../components/CV_Components";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import useStore from "../store";
+import { useStore } from "../store";
 import React, { useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 
