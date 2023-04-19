@@ -1,10 +1,12 @@
 import React from "react";
-import { year_to_string } from "../../utils";
+
 import { DeleteButton, OpenButton, DownloadButton } from "../UI/Buttons";
 import { Box, Stack, Typography } from "@mui/material";
 
+import { year_to_string } from "../../utils";
+
 export const CVShort = ({ cv, number }) => {
-  const filename = `${cv.filename}_${cv.last_name}`;
+  const filename = `CV_${cv.last_name}`;
   return (
     <Box
       component="article"
