@@ -5,9 +5,7 @@ import "./assets/styles/index.css";
 import { AppRouter } from "./router";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <AppRouter />
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <AppRouter />
+  </BrowserRouter>
 );
