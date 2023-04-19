@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { get_single_cv, single_cv_example } from "../API";
-import { DeleteButton, DownloadButton } from "../components/UI/Buttons";
+import {
+  DeleteTextButton,
+  DownloadCSVTextButton,
+} from "../components/UI/Buttons";
 import { CVTable } from "../components/CV_Components";
 
 export const CVPage = () => {
@@ -53,11 +56,8 @@ const CV_Links = ({ cv_id, person }) => {
       spacing={3}
       sx={{ flex: "2", alignItems: "center" }}
     >
-      <>
-        <Typography> Download</Typography>
-        <DownloadButton cv_id={cv_id} filename={filename} />
-      </>
-      <DeleteButton cv_id={cv_id} />
+      <DownloadCSVTextButton cv_id={cv_id} filename={filename} />
+      <DeleteTextButton cv_id={cv_id} />
     </Stack>
   );
 };

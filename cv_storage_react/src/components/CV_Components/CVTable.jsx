@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Paper,
   Stack,
   Table,
   TableBody,
@@ -20,9 +19,8 @@ export const CVTable = ({ cv }) => {
       sx={{ width: 0.6, alignItems: "center" }}
     >
       <TableContainer
-        component={Paper}
         align="center"
-        sx={{ bgcolor: "#363636", mt: 9, mb: 5 }}
+        sx={{ bgcolor: "#363636", mt: 9, mb: 5, border: "1px solid #d2d2d2" }}
       >
         <Table>
           <TableBody>

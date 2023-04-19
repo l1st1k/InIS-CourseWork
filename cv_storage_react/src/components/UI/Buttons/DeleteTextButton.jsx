@@ -1,6 +1,6 @@
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { IconButton, Tooltip } from "@mui/material";
+import { Button } from "@mui/material";
 import "react-toastify/dist/ReactToastify.css";
 
 import { delete_cv } from "../../../API";
@@ -17,8 +17,13 @@ export const DeleteTextButton = ({ cv_id }) => {
 
   return (
     <>
-      <IconButton
-        sx={{ color: "#d2d2d2" }}
+      <Button
+        endIcon={<DeleteIcon sx={{ width: 0.85 }} />}
+        sx={{
+          color: "#d2d2d2",
+          border: "1px solid #FD5959FF",
+          borderRadius: 0,
+        }}
         onClick={async () => {
           await (
             await call_delete_cv
@@ -27,12 +32,11 @@ export const DeleteTextButton = ({ cv_id }) => {
             .getState()
             .fetchCVs()
             .then(() => console.log(`Fetched CVs after deleting`));
+          // todo redirect to catalog
         }}
       >
-        <Tooltip title="Delete" placement="top">
-          <DeleteIcon />
-        </Tooltip>
-      </IconButton>
+        Delete
+      </Button>
     </>
   );
 };

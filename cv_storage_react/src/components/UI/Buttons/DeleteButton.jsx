@@ -18,7 +18,7 @@ export const DeleteButton = ({ cv_id }) => {
   return (
     <>
       <IconButton
-        sx={{ color: "#d2d2d2" }}
+        sx={{ color: "#FD5959FF" }}
         onClick={async () => {
           await (
             await call_delete_cv

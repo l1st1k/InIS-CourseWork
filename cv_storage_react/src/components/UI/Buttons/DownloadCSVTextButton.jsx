@@ -1,7 +1,7 @@
 import React from "react";
 
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
-import { IconButton, Tooltip } from "@mui/material";
+import { Button } from "@mui/material";
 
 import { get_csv } from "../../../API";
 import { useToaster } from "../../../hooks";
@@ -30,10 +30,12 @@ export const DownloadCSVTextButton = ({ cv_id, filename }) => {
   };
 
   return (
-    <IconButton sx={{ color: "#d2d2d2" }} onClick={() => handleClick()}>
-      <Tooltip title="Download .csv" placement="top">
-        <FileDownloadIcon />
-      </Tooltip>
-    </IconButton>
+    <Button
+      endIcon={<FileDownloadIcon />}
+      sx={{ color: "#d2d2d2", border: "1px solid #d2d2d2", borderRadius: 0 }}
+      onClick={() => handleClick()}
+    >
+      Download CSV
+    </Button>
   );
 };
