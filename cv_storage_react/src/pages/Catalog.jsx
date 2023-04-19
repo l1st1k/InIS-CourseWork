@@ -12,7 +12,7 @@ export const Catalog = () => {
     useStore
       .getState()
       .fetchCVs()
-      .then(() => console.log(`Fetched ${cvs.length} CVs`));
+      .then((amount) => console.log(`Fetched ${amount} CVs`));
   }, []);
 
   return (
