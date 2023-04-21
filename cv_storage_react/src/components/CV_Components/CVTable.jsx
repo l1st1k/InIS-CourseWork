@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Stack,
   Table,
@@ -9,9 +9,16 @@ import {
 } from "@mui/material";
 
 import { makeRows } from "../../utils";
+import { CVTableValueCell } from "../CV_Components";
 
 export const CVTable = ({ cv }) => {
   const rows = makeRows(cv);
+  const [lastClickedCellIndex, setLastClickedCellIndex] = useState(null);
+
+  const handleCellClick = (index) => {
+    setLastClickedCellIndex(index);
+  };
+
   return (
     <Stack
       direction={"row"}
@@ -24,14 +31,17 @@ export const CVTable = ({ cv }) => {
       >
         <Table>
           <TableBody>
-            {rows.map((row) => (
+            {rows.map((row, index) => (
               <TableRow key={row.name}>
                 <TableCell component="th" scope="row" sx={{ color: "#d2d2d2" }}>
                   {row.name}
                 </TableCell>
-                <TableCell align="left" sx={{ color: "#d2d2d2" }}>
-                  {row.value}
-                </TableCell>
+                <CVTableValueCell
+                  value={row.value}
+                  index={index}
+                  lastClickedCellIndex={lastClickedCellIndex}
+                  onCellClick={handleCellClick}
+                />
               </TableRow>
             ))}
           </TableBody>
