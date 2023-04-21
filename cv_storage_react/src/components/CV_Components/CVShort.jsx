@@ -12,6 +12,7 @@ export const CVShort = ({ cv, number }) => {
       component="article"
       key={cv.cv_id}
       sx={{
+        bgcolor: "#363636",
         padding: 2,
         width: 1,
         border: "2px solid #d2d2d2",
