@@ -1,13 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Button } from "@mui/material";
 import "react-toastify/dist/ReactToastify.css";
 
 import { delete_cv } from "../../../API";
 import { useToaster } from "../../../hooks";
-import { useStore } from "../../../store";
 
 export const DeleteTextButton = ({ cv_id }) => {
+  const navigate = useNavigate();
   const call_delete_cv = useToaster(
     delete_cv,
     "Successfully deleted!",
@@ -28,11 +29,7 @@ export const DeleteTextButton = ({ cv_id }) => {
           await (
             await call_delete_cv
           )();
-          await useStore
-            .getState()
-            .fetchCVs()
-            .then(() => console.log(`Fetched CVs after deleting`));
-          // todo redirect to catalog
+          navigate("/catalog");
         }}
       >
         Delete
