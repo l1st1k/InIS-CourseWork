@@ -7,5 +7,6 @@ export const get_all_cvs = async () => {
     return response.json();
   } catch (err) {
     console.log(err.message);
+    return [];
   }
 };
