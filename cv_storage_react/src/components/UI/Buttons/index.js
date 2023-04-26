@@ -6,3 +6,4 @@ export { LinkedInButton } from "./LinkedInButton.jsx";
 export { OpenButton } from "./OpenButton.jsx";
 export { DownloadCSVTextButton } from "./DownloadCSVTextButton.jsx";
 export { DeleteTextButton } from "./DeleteTextButton.jsx";
+export { UploadButtons } from "./UploadButtons.jsx";
