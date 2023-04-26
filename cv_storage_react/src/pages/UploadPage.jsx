@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
-import { Header } from "../components/Header/index.js";
-import { Footer } from "../components/Footer/index.js";
-import { UploadButton } from "../components/UI/Buttons/index.js";
+
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { UploadBar } from "../components/UploadBar";
 
 export const UploadPage = () => {
   return (
@@ -37,7 +38,7 @@ export const UploadPage = () => {
             We only accept .csv format for efficient processing. Select your
             file, double-check accuracy, and upload. Your data is safe with us.
           </Typography>
-          <UploadButtons />
+          <UploadBar />
         </Container>
         <Footer sx={{ flex: "2" }} />
       </Box>

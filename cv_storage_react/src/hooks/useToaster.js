@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { toast } from "react-toastify";
-// TODO use for post requests
+
 export const useToaster = async (func, success, failure, cv_id) => {
   const toastId = useRef(null);
 
