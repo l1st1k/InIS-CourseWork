@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import { toast } from "react-toastify";
 
-export const SelectButton = ({ file, setFile }) => {
+export const SelectButton = ({ setFile }) => {
   const toastId = useRef(null);
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];

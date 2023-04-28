@@ -18,7 +18,7 @@ export const UploadBar = () => {
         justifyContent: "center",
       }}
     >
-      <SelectButton file={file} setFile={setFile} />
+      <SelectButton setFile={setFile} />
       <Typography>{file ? file.name : ""}</Typography>
       <UploadButton file={file} />
     </Stack>
