@@ -1,15 +1,14 @@
 import { useRef } from "react";
 import { toast } from "react-toastify";
 
-export const useToaster = async (func, success, failure, cv_id) => {
+export const useToaster = async (func, success, failure, args) => {
   const toastId = useRef(null);
 
   return async () => {
     toastId.current = toast.loading("Processing...", {
       position: toast.POSITION.BOTTOM_RIGHT,
     });
-
-    const response = await func(cv_id);
+    const response = await func(args);
     response === "Failed"
       ? toast.update(toastId.current, {
           autoClose: 3000,
