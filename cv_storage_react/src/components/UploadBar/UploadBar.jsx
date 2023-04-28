@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Stack } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 
 import { SelectButton, UploadButton } from "../UploadBar";
 
@@ -19,6 +19,7 @@ export const UploadBar = () => {
       }}
     >
       <SelectButton file={file} setFile={setFile} />
+      <Typography>{file ? file.name : ""}</Typography>
       <UploadButton file={file} />
     </Stack>
   );
