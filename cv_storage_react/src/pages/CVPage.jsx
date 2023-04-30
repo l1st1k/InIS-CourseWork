@@ -19,12 +19,11 @@ export const CVPage = () => {
   useEffect(() => {
     const loadData = async () => {
       // API-on version
-      // const response = await get_single_cv(cv_id);
-      // console.log(response);
-      // setPerson(response.data);
+      const response = await get_single_cv(cv_id);
+      setPerson(response.data);
 
       // API-off version
-      setPerson(single_cv_example);
+      // setPerson(single_cv_example);
 
       return cv_id;
     };
