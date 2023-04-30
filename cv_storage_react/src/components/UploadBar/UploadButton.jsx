@@ -35,6 +35,10 @@ export const UploadButton = ({ file }) => {
     (await call_post_cv)().then(console.log);
   };
 
+  if (!file) {
+    return null; // don't render the button if file is null
+  }
+
   return (
     <Button
       variant="contained"
