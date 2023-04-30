@@ -20,7 +20,7 @@ export const UploadBar = () => {
     >
       <SelectButton setFile={setFile} />
       <Typography>{file ? file.name : ""}</Typography>
-      <UploadButton file={file} />
+      <UploadButton file={file} setFile={setFile} />
     </Stack>
   );
 };

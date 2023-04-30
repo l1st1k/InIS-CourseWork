@@ -9,7 +9,8 @@ export const post_cv = async (data) => {
       body: data,
     });
     if (response.status !== 201) throw Error(await response.json());
-    return response.json();
+    console.log(await response.json());
+    return response.status;
   } catch (err) {
     console.log(err.message);
     return "Failed";

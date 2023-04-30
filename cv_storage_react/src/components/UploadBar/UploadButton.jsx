@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 import { post_cv } from "../../API";
 import { useToaster } from "../../hooks";
 
-export const UploadButton = ({ file }) => {
+export const UploadButton = ({ file, setFile }) => {
   const toastId = useRef(null);
 
   const formData = new FormData();
@@ -32,7 +32,11 @@ export const UploadButton = ({ file }) => {
       return;
     }
 
-    (await call_post_cv)().then(console.log);
+    (await call_post_cv)().then((response_status) => {
+      if (response_status === 201) {
+        setFile(null);
+      }
+    });
   };
 
   if (!file) {
