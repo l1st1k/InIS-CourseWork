@@ -19,8 +19,27 @@ export const UploadBar = () => {
       }}
     >
       <SelectButton setFile={setFile} />
-      <Typography>{file ? file.name : ""}</Typography>
+      <Filename file={file} />
       <UploadButton file={file} setFile={setFile} />
     </Stack>
+  );
+};
+
+const Filename = ({ file }) => {
+  if (!file) {
+    return null;
+  }
+  return (
+    <Typography
+      sx={{
+        bgcolor: "#cbaeff",
+        px: "16px",
+        py: "6px",
+        color: "#252525",
+        borderRadius: "4px",
+      }}
+    >
+      {file ? file.name : ""}
+    </Typography>
   );
 };
