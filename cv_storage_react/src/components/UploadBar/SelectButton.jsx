@@ -38,7 +38,12 @@ export const SelectButton = ({ setFile }) => {
           variant="contained"
           component="span"
           endIcon={<UploadFileIcon />}
-          sx={{ bgcolor: "#363636" }}
+          sx={{
+            bgcolor: "#363636",
+            "&:hover": {
+              bgcolor: "#cbaeff",
+            },
+          }}
         >
           Select CSV
         </Button>

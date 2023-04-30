@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
+import { toast } from "react-toastify";
 import SendIcon from "@mui/icons-material/Send";
 import { Button } from "@mui/material";
+
 import { post_cv } from "../../API";
 import { useToaster } from "../../hooks";
-import { toast } from "react-toastify";
 
 export const UploadButton = ({ file }) => {
   const toastId = useRef(null);
@@ -39,7 +40,12 @@ export const UploadButton = ({ file }) => {
       variant="contained"
       onClick={handleUpload}
       endIcon={<SendIcon />}
-      sx={{ bgcolor: "#363636" }}
+      sx={{
+        bgcolor: "#363636",
+        "&:hover": {
+          bgcolor: "#cbaeff",
+        },
+      }}
     >
       Upload
     </Button>
