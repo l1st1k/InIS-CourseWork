@@ -7,17 +7,7 @@ export const UploadBar = () => {
   const [file, setFile] = useState(null);
 
   return (
-    <Stack
-      direction="row"
-      spacing={3}
-      justifyItems={"center"}
-      sx={{
-        flex: "1",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <Stack direction="row" justifyItems={"center"} spacing={file ? 3 : 0}>
       <SelectButton setFile={setFile} />
       <Filename file={file} />
       <UploadButton file={file} setFile={setFile} />
