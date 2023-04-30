@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { UploadBar } from "../components/UploadBar";
+import { TableFields, UploadBar } from "../components/UploadBar";
 
 export const UploadPage = () => {
   return (
@@ -17,29 +17,21 @@ export const UploadPage = () => {
         }}
       >
         <Header sx={{ flex: "2" }} />
-        <Container maxWidth="md" sx={{ px: 0 }}>
-          <Typography
-            component="h5"
-            variant="h3"
-            align="center"
-            color="#d2d2d2"
-            sx={{ flex: "1" }}
-            gutterBottom
-          >
-            Welcome to CV upload page!
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Typography variant="h5" align="center" color="#d2d2d2" paragraph>
+            We only accept .csv format for efficient processing!
+            <br /> Your .csv-file should contain the following fields:
           </Typography>
-          <Typography
-            sx={{ flex: "2" }}
-            variant="h5"
-            align="center"
-            color="#d2d2d2"
-            paragraph
-          >
-            We only accept .csv format for efficient processing. Select your
-            file, double-check accuracy, and upload. Your data is safe with us.
-          </Typography>
+          <TableFields />
           <UploadBar />
-        </Container>
+        </Box>
         <Footer sx={{ flex: "2" }} />
       </Box>
     </>

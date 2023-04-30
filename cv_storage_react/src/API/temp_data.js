@@ -179,13 +179,13 @@ export const cvs = [
 
 export const single_cv_example = {
   cv_id: "21c060bc-5aeb-4109-a2d9-419a88644dd8",
-  first_name: "Daniil",
-  last_name: "Boloshenko",
-  age: 45,
-  major: "frontend engineer",
-  years_of_exp: 1,
-  phone_number: "+375294589925",
-  skills: "js CSS",
-  projects: "finance django website",
+  first_name: "Michael",
+  last_name: "Jordan",
+  age: 60,
+  major: "Software engineer",
+  years_of_exp: 20,
+  phone_number: "+375291234567",
+  skills: "Go Python React Kubernetes",
+  projects: "Chicago Bulls / Washington Wizards",
   project_amount: 2,
 };
