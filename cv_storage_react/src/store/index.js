@@ -24,6 +24,12 @@ export const useStore = create((set, get) => ({
     const page_amount = Math.ceil(get().cvs.length / get().cv_per_page);
     set({ number_of_pages: page_amount });
 
+    // Case: user deletes last cv on page
+    // Behavior: we're moving user to the previous page
+    if (get().page > get().number_of_pages) {
+      set({ page: get().page - 1 });
+    }
+
     set({ loading: false });
     return get().cvs.length;
   },
