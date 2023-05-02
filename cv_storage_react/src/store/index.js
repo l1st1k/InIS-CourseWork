@@ -34,10 +34,6 @@ export const useStore = create((set, get) => ({
     return get().cvs.length;
   },
 
-  setPage(newPage) {
-    set({ page: newPage });
-  },
-
   async searchCVs(str) {
     set({ loading: true });
 
@@ -57,6 +53,18 @@ export const useStore = create((set, get) => ({
     }
     set({ number_of_pages: page_amount });
 
+    set({ loading: false });
+  },
+
+  setPage(newPage) {
+    set({ page: newPage });
+  },
+
+  setLoadingOn() {
+    set({ loading: true });
+  },
+
+  setLoadingOff() {
     set({ loading: false });
   },
 }));

@@ -3,11 +3,16 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import { routes } from "../router";
+import { useStore } from "../store";
+import { Loader } from "../components/Loader";
 
 export const AppRouter = () => {
-  // if (loading) {
-  //     return <Loader/>
-  // }
+  const { loading } = useStore();
+  console.log(loading);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>
