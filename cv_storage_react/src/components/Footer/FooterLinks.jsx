@@ -8,11 +8,11 @@ export const FooterLinks = () => {
     <Stack direction={"row"} spacing={2} sx={{ my: 3 }}>
       <LinkedInButton />
       <GitHubButton
-        link={"https://github.com/l1st1k/InIS-CourseWork"}
+        link={import.meta.env.VITE_FRONTEND_REPO_URL}
         name={"Frontend"}
       />
       <GitHubButton
-        link={"https://github.com/l1st1k/CV-storage"}
+        link={import.meta.env.VITE_BACKEND_REPO_URL}
         name={"Backend"}
       />
     </Stack>

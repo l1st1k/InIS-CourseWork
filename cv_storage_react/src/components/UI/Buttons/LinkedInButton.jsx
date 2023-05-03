@@ -8,7 +8,7 @@ export const LinkedInButton = () => {
       variant={"contained"}
       startIcon={<LinkedInIcon />}
       size={"small"}
-      href="https://www.linkedin.com/in/l1st1k/"
+      href={import.meta.env.VITE_DEVELOPER_URL}
       target="_blank"
     >
       Developer
