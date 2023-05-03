@@ -5,11 +5,16 @@ import { useStore } from "../../store";
 
 export const SearchInput = () => {
   const [searchTerm, setSearchTerm] = useState("");
+
   useEffect(() => {
-    useStore
-      .getState()
-      .searchCVs(searchTerm)
-      .then(() => console.log(`Searched for: ${searchTerm}`));
+    const timerId = setTimeout(() => {
+      useStore
+        .getState()
+        .searchCVs(searchTerm)
+        .then(() => console.log(`Searched for: ${searchTerm}`));
+    }, 500);
+
+    return () => clearTimeout(timerId);
   }, [searchTerm]);
 
   const handleChange = (event) => {
