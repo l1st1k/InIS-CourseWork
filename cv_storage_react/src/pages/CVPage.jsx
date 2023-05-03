@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
-import { Box, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { get_single_cv, single_cv_example } from "../API";
+import { get_single_cv } from "../API";
 import {
   DeleteTextButton,
   DownloadCSVTextButton,
@@ -41,19 +39,10 @@ export const CVPage = () => {
   }
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "98vh",
-        justifyContent: "space-between",
-      }}
-    >
-      <Header sx={{ flex: "2" }} />
+    <>
       <CVTable cv={person} />
       <CV_Links cv_id={cv_id} person={person} />
-      <Footer sx={{ flex: "2" }} />
-    </Box>
+    </>
   );
 };
 
