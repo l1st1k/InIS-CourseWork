@@ -4,9 +4,10 @@ import { Header } from "../components/Header";
 import { useStore } from "../store";
 import React, { useEffect } from "react";
 import { Box, Typography } from "@mui/material";
+import { Loader } from "../components/Loader";
 
 export const Catalog = () => {
-  const { cvs, searched_cvs } = useStore();
+  const { cvs, searched_cvs, loading } = useStore();
 
   useEffect(() => {
     useStore
@@ -14,6 +15,10 @@ export const Catalog = () => {
       .fetchCVs()
       .then((amount) => console.log(`Fetched ${amount} CVs`));
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>
