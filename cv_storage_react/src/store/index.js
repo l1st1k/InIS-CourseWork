@@ -60,11 +60,7 @@ export const useStore = create((set, get) => ({
     set({ page: newPage });
   },
 
-  setLoadingOn() {
-    set({ loading: true });
-  },
-
-  setLoadingOff() {
-    set({ loading: false });
+  setLoading(flag) {
+    set({ loading: flag });
   },
 }));
