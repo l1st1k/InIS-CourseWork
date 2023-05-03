@@ -1,11 +1,11 @@
 import React from "react";
+import { Box } from "@mui/material";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import { routes } from "../router";
 import { Footer } from "../components/Footer";
-import { Header } from "../components/Header/index.js";
-import { Box } from "@mui/material";
+import { Header } from "../components/Header";
 
 export const AppRouter = () => {
   return (

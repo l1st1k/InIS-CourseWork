@@ -12,9 +12,9 @@ import { makeRows } from "../../utils";
 import { CVTableValueCell } from "../CV_Components";
 
 export const CVTable = ({ cv }) => {
-  const rows = makeRows(cv);
   const [lastClickedCellIndex, setLastClickedCellIndex] = useState(null);
 
+  const rows = makeRows(cv);
   const handleCellClick = (index) => {
     setLastClickedCellIndex(index);
   };

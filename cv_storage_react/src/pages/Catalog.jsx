@@ -1,7 +1,8 @@
-import { CVStack } from "../components/CV_Components";
-import { useStore } from "../store";
 import React, { useEffect } from "react";
 import { Typography } from "@mui/material";
+
+import { useStore } from "../store";
+import { CVStack } from "../components/CV_Components";
 import { Loader } from "../components/Loader";
 
 export const Catalog = () => {

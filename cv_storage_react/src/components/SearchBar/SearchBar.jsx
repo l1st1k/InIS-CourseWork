@@ -1,4 +1,5 @@
 import { Stack } from "@mui/material";
+
 import { SearchInput } from "../SearchBar";
 
 export const SearchBar = () => {

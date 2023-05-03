@@ -16,23 +16,21 @@ export const DeleteButton = ({ cv_id }) => {
   );
 
   return (
-    <>
-      <IconButton
-        sx={{ color: "#FD5959FF" }}
-        onClick={async () => {
-          await (
-            await call_delete_cv
-          )();
-          await useStore
-            .getState()
-            .fetchCVs()
-            .then(() => console.log(`Fetched CVs after deleting`));
-        }}
-      >
-        <Tooltip title="Delete" placement="top">
-          <DeleteIcon />
-        </Tooltip>
-      </IconButton>
-    </>
+    <IconButton
+      sx={{ color: "#FD5959FF" }}
+      onClick={async () => {
+        await (
+          await call_delete_cv
+        )();
+        await useStore
+          .getState()
+          .fetchCVs()
+          .then(() => console.log(`Fetched CVs after deleting`));
+      }}
+    >
+      <Tooltip title="Delete" placement="top">
+        <DeleteIcon />
+      </Tooltip>
+    </IconButton>
   );
 };

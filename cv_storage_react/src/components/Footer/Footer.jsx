@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Container, Stack, Typography } from "@mui/material";
+
 import { Copyright, FooterLinks } from "../Footer";
 import { Logo } from "../Header";
 

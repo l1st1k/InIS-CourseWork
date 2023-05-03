@@ -17,23 +17,21 @@ export const DeleteTextButton = ({ cv_id }) => {
   );
 
   return (
-    <>
-      <Button
-        endIcon={<DeleteIcon sx={{ width: 0.85 }} />}
-        sx={{
-          color: "#d2d2d2",
-          border: "1px solid #FD5959FF",
-          borderRadius: 0,
-        }}
-        onClick={async () => {
-          await (
-            await call_delete_cv
-          )();
-          navigate("/catalog");
-        }}
-      >
-        Delete
-      </Button>
-    </>
+    <Button
+      endIcon={<DeleteIcon sx={{ width: 0.85 }} />}
+      sx={{
+        color: "#d2d2d2",
+        border: "1px solid #FD5959FF",
+        borderRadius: 0,
+      }}
+      onClick={async () => {
+        await (
+          await call_delete_cv
+        )();
+        navigate("/catalog");
+      }}
+    >
+      Delete
+    </Button>
   );
 };

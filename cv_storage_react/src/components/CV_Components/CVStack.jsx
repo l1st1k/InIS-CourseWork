@@ -1,7 +1,8 @@
 import React from "react";
-import { CVShort } from "./";
 import { Box, Divider, Stack } from "@mui/material";
+
 import { useStore } from "./../../store";
+import { CVShort } from "../CV_Components";
 import { StyledPagination } from "../Pagination";
 import { SearchBar } from "../SearchBar";
 

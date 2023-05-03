@@ -19,6 +19,7 @@ const Filename = ({ file }) => {
   if (!file) {
     return null;
   }
+
   return (
     <Typography
       sx={{

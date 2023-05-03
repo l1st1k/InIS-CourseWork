@@ -1,6 +1,7 @@
 import React from "react";
-import { GitHubButton, LinkedInButton } from "../UI/Buttons";
 import { Stack } from "@mui/material";
+
+import { GitHubButton, LinkedInButton } from "../UI/Buttons";
 
 export const FooterLinks = () => {
   return (
