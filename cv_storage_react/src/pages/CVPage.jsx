@@ -11,13 +11,18 @@ import {
   DownloadCSVTextButton,
 } from "../components/UI/Buttons";
 import { CVTable } from "../components/CV_Components";
+import { Loader } from "../components/Loader";
+import { useStore } from "../store";
 
 export const CVPage = () => {
   const { cv_id } = useParams();
   const [person, setPerson] = useState({});
+  const { loading, setLoading } = useStore();
 
   useEffect(() => {
     const loadData = async () => {
+      setLoading(true);
+
       // API-on version
       const response = await get_single_cv(cv_id);
       setPerson(response.data);
@@ -25,10 +30,15 @@ export const CVPage = () => {
       // API-off version
       // setPerson(single_cv_example);
 
+      setLoading(false);
       return cv_id;
     };
     loadData().then((id) => console.log(`Fetched page for ID = ${id}`));
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <Box
