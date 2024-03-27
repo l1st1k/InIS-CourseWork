@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-import { routes } from "../router";
+import { PrivateRoute, routes } from "../router";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 
@@ -19,16 +19,24 @@ export const AppRouter = () => {
         }}
       >
         <Header sx={{ flex: "2" }} />
-        <Routes>
-          {routes.map((route) => (
-            <Route
-              path={route.path}
-              element={<route.component />}
-              key={route.path}
-            />
-          ))}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+          <Routes>
+              {routes.map((route) => (
+                  route.private ? (
+                      <Route
+                          key={route.path}
+                          path={route.path}
+                          element={<PrivateRoute component={route.component} />}
+                      />
+                  ) : (
+                      <Route
+                          key={route.path}
+                          path={route.path}
+                          element={<route.component />}
+                      />
+                  )
+              ))}
+              <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
         <Footer sx={{ flex: "2" }} />
       </Box>
 
