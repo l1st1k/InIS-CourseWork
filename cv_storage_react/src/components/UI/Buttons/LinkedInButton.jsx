@@ -10,6 +10,7 @@ export const LinkedInButton = () => {
       size={"small"}
       href={import.meta.env.VITE_DEVELOPER_URL}
       target="_blank"
+      sx={{color:"black"}}
     >
       Developer
     </Button>

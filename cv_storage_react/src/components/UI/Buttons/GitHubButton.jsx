@@ -13,7 +13,7 @@ export const GitHubButton = (props) => {
       size={"small"}
       href={link}
       target="_blank"
-      color={"secondary"}
+      sx={{color:"black"}}
     >
       {name}
     </Button>
