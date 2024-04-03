@@ -1,10 +1,11 @@
-import { CVPage, UploadPage, HomePage, Catalog } from "../pages";
+import { CVPage, UploadPage, HomePage, Catalog, LoginPage } from "../pages";
 
 export const routes = [
   { path: "/", component: HomePage },
-  { path: "/catalog", component: Catalog },
-  { path: "/upload", component: UploadPage },
-  { path: "/cv/:cv_id", component: CVPage, private: true },
+  { path: "/login", component: LoginPage },
+  { path: "/catalog", component: Catalog},
+  { path: "/upload", component: UploadPage, private: true},
+  { path: "/cv/:cv_id", component: CVPage,},
 ];
 
 export { AppRouter } from "./AppRouter.jsx";

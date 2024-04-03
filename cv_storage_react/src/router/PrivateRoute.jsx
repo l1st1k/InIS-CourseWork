@@ -5,5 +5,5 @@ import Cookies from 'js-cookie';
 export const PrivateRoute = ({ component: Component, ...rest }) => {
     const isAuthenticated = Cookies.get('access_token_cookie');
 
-    return isAuthenticated ? <Component {...rest} /> : <Navigate to="/catalog" />;
+    return isAuthenticated ? <Component {...rest} /> : <Navigate to="/login" />;
 };
