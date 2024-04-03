@@ -6,8 +6,11 @@ import { ToastContainer } from "react-toastify";
 import { PrivateRoute, routes } from "../router";
 import { Footer } from "../components/Footer";
 import { ProtectedHeader, PublicHeader } from "../components/Header";
+import {useStore} from "../store/index.js";
 
 export const AppRouter = () => {
+    const { is_auth } = useStore();
+
   return (
     <>
       <Box
@@ -18,7 +21,7 @@ export const AppRouter = () => {
           justifyContent: "space-between",
         }}
       >
-        <ProtectedHeader sx={{ flex: "2" }} />  // todo if statement for store value
+          { is_auth ? <ProtectedHeader sx={{ flex: "2" }} /> : <PublicHeader sx={{ flex: "2" }} /> }
           <Routes>
               {routes.map((route) => (
                   route.private ? (

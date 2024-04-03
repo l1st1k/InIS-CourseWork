@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import {Link} from "react-router-dom";
+import {useStore} from "../store/index.js";
 
 export const LoginPage = () => {
     const [authType, setAuthType] = useState('company');
+    const { setAuthState } = useStore();
 
     const handleAuthTypeChange = (event) => {
         setAuthType(event.target.value);
@@ -11,7 +13,7 @@ export const LoginPage = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Here you can add your submit logic
+        setAuthState(true);
         console.log('Form submitted');
     };
 

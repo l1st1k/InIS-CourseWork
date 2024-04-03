@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { cvs, get_all_cvs } from "../API";
 
 export const useStore = create((set, get) => ({
+  is_auth: false,
   cvs: [],
   searched_cvs: [],
   loading: false,
@@ -58,6 +59,10 @@ export const useStore = create((set, get) => ({
 
   setPage(newPage) {
     set({ page: newPage });
+  },
+
+  setAuthState(state) {
+    set({ is_auth: state });
   },
 
   setLoading(flag) {

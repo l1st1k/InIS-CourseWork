@@ -4,13 +4,15 @@ import { Stack, AppBar, Divider } from "@mui/material";
 
 import { Logo } from "../Header";
 import { HeaderButton } from "../UI/Buttons";
+import {useStore} from "../../store/index.js";
 
 export const ProtectedHeader = () => {
   const navigate = useNavigate();
+  const { setAuthState } = useStore();
 
   const handleLogout = () => {
     console.log("Logged out");
-    // Add your logout logic here
+    setAuthState(false);
     navigate("/login");
   };
 
