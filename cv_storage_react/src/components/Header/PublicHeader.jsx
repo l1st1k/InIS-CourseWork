@@ -4,7 +4,7 @@ import { Stack, AppBar, Divider } from "@mui/material";
 import { Logo } from "../Header";
 import { HeaderButton } from "../UI/Buttons";
 
-export const Header = () => {
+export const PublicHeader = () => {
   return (
     <AppBar position="relative">
       <Stack
@@ -22,8 +22,8 @@ export const Header = () => {
           flexItem
           sx={{ bgcolor: "#d2d2d2", borderRightWidth: 2 }}
         />
-        <HeaderButton text={"Catalog"} link="/catalog" />
-        <HeaderButton text={"Upload CV"} link="/upload" />
+        <HeaderButton text={"Sign in"} link="/login" />
+        <HeaderButton text={"Registration"} link="/registration" />
       </Stack>
     </AppBar>
   );

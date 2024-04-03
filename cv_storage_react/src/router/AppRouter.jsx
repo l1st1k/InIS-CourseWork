@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 
 import { PrivateRoute, routes } from "../router";
 import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
+import { ProtectedHeader, PublicHeader } from "../components/Header";
 
 export const AppRouter = () => {
   return (
@@ -18,7 +18,7 @@ export const AppRouter = () => {
           justifyContent: "space-between",
         }}
       >
-        <Header sx={{ flex: "2" }} />
+        <ProtectedHeader sx={{ flex: "2" }} />  // todo if statement for store value
           <Routes>
               {routes.map((route) => (
                   route.private ? (
