@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, {useRef, useState} from 'react';
 import { Container, TextField, Button, Typography } from '@mui/material';
 import {Link} from "react-router-dom";
+import { company_register } from "../API/index.js";
 
 export const RegistrationPage = () => {
     const [file, setFile] = useState(null);
@@ -9,9 +10,18 @@ export const RegistrationPage = () => {
         setFile(event.target.files[0]);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log('Form submitted');
+        const formData = new FormData();
+        formData.append('name', event.target.name.value);
+        formData.append('email', event.target.email.value);
+        formData.append('password', event.target.password.value);
+        if (file) {
+            formData.append('file', file);
+        }
+
+        await company_register(formData);
+        console.log('Registration form submitted');
     };
 
     return (
