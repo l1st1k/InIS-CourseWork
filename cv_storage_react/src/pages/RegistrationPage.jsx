@@ -1,10 +1,11 @@
 import React, {useRef, useState} from 'react';
 import { Container, TextField, Button, Typography } from '@mui/material';
-import {Link} from "react-router-dom";
-import { company_register } from "../API/index.js";
+import { Link, useNavigate } from "react-router-dom";
+import { company_register } from "../API";
 
 export const RegistrationPage = () => {
     const [file, setFile] = useState(null);
+    const navigate = useNavigate();
 
     const handleFileChange = (event) => {
         setFile(event.target.files[0]);
@@ -12,6 +13,10 @@ export const RegistrationPage = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        if (!event.target.name.value || !event.target.email.value || !event.target.password.value){
+            alert("Please fill all fields.");
+            return;
+        }
         const formData = new FormData();
         formData.append('name', event.target.name.value);
         formData.append('email', event.target.email.value);
@@ -22,6 +27,7 @@ export const RegistrationPage = () => {
 
         await company_register(formData);
         console.log('Registration form submitted');
+        navigate("/login");
     };
 
     return (

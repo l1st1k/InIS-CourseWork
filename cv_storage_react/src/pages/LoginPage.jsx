@@ -1,20 +1,36 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, FormControlLabel, Radio, RadioGroup } from '@mui/material';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useStore} from "../store/index.js";
+import {auth_login, company_register} from "../API/index.js";
 
 export const LoginPage = () => {
     const [authType, setAuthType] = useState('company');
     const { setAuthState } = useStore();
+    const navigate = useNavigate();
 
     const handleAuthTypeChange = (event) => {
         setAuthType(event.target.value);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        setAuthState(true);
-        console.log('Form submitted');
+        if (!event.target.email.value || !event.target.password.value) {
+            alert("Please fill all fields.");
+            return;
+        }
+        const formData = new FormData();
+        formData.append('login', event.target.email.value);
+        formData.append('password', event.target.password.value);
+        formData.append('as_company', authType === 'company'? 'True' : 'False');
+        console.log('Log in form submitted');
+        let resp = await auth_login(formData);
+        if (resp !== 200) {
+            alert("Username or password is incorrect.");
+        } else {
+            setAuthState(true);
+            navigate("/");
+        }
     };
 
     return (
