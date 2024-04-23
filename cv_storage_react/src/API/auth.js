@@ -11,7 +11,8 @@ export const auth_login = async (data) => {
             credentials: 'include'
         });
         if (response.status !== 200) throw Error(await response.json());
-        console.log(await response.json());
+
+        await process_cookies(response);
         return response.status;
     } catch (err) {
         console.log(err.message);
@@ -28,7 +29,8 @@ export const auth_refresh = async () => {
             credentials: 'include'
         });
         if (response.status !== 200) throw Error(await response.json());
-        console.log(await response.json());
+
+        await process_cookies(response);
         return response.status;
     } catch (err) {
         console.log(err.message);
@@ -42,9 +44,20 @@ export const auth_logout = async () => {
             credentials: 'include'
         });
         if (response.status !== 200) throw Error(await response.json());
+
+        await process_cookies(response);
         return response.status;
     } catch (err) {
         console.log(err.message);
         return "Failed";
     }
 };
+
+const process_cookies = async (response) => {
+    let resp = await response.json();
+    console.log(resp);
+    let cookies = resp["cookies"]
+    cookies.forEach(cookie => {
+        document.cookie = cookie.replace("; HttpOnly", "");
+    });
+}

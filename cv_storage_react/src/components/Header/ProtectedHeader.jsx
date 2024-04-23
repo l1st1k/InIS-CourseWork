@@ -4,13 +4,13 @@ import { Stack, AppBar, Divider } from "@mui/material";
 
 import { Logo } from "../Header";
 import { HeaderButton } from "../UI/Buttons";
-import {useStore} from "../../store";
-import {auth_logout} from "../../API";
+import { auth_logout } from "../../API";
+import {useStore} from "../../store/index.js";
+import Cookies from "js-cookie";
 
 export const ProtectedHeader = () => {
   const navigate = useNavigate();
   const { setAuthState } = useStore();
-
   const handleLogout = async (event) => {
     event.preventDefault();
 
@@ -18,7 +18,8 @@ export const ProtectedHeader = () => {
     if (resp !== 200) {
       alert(resp);
     } else {
-      setAuthState(false);
+      const isAuthenticated = Cookies.get('auth_str');
+      setAuthState(!!isAuthenticated);
       navigate("/login");
     }
   };

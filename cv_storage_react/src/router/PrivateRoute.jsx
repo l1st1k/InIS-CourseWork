@@ -1,9 +1,8 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import Cookies from 'js-cookie';
+import { useStore } from "../store/index.js";
 
 export const PrivateRoute = ({ component: Component, ...rest }) => {
-    const isAuthenticated = Cookies.get('access_token_cookie');
-
-    return isAuthenticated ? <Component {...rest} /> : <Navigate to="/login" />;
+    const { is_auth } = useStore();
+    return is_auth ? <Component {...rest} /> : <Navigate to="/login" />;
 };

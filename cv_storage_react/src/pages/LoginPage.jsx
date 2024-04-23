@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import {Link, useNavigate} from "react-router-dom";
+import {auth_login} from "../API/index.js";
 import {useStore} from "../store/index.js";
-import {auth_login, company_register} from "../API/index.js";
+import Cookies from "js-cookie";
 
 export const LoginPage = () => {
     const [authType, setAuthType] = useState('company');
@@ -28,7 +29,8 @@ export const LoginPage = () => {
         if (resp !== 200) {
             alert("Username or password is incorrect.");
         } else {
-            setAuthState(true);
+            const isAuthenticated = Cookies.get('auth_str');
+            setAuthState(!!isAuthenticated);
             navigate("/");
         }
     };
