@@ -2,9 +2,9 @@ export const get_all_cvs = async () => {
   try {
     const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/cvs`, {
       method: 'GET',
-      credentials: 'include',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Cooookie': document.cookie
       }
     });
 
