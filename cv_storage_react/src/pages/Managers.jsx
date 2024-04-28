@@ -6,13 +6,13 @@ import { CVStack } from "../components/CV_Components";
 import { Loader } from "../components/Loader";
 
 export const Managers = () => {
-  const { managers } = useStore();
+  const { managers, searched_managers, loading } = useStore();
 
   useEffect(() => {
     useStore
       .getState()
-      .fetchCVs()
-      .then((amount) => console.log(`Fetched ${amount} CVs`));
+      .fetchManagers()
+      .then((amount) => console.log(`Fetched ${amount} Managers`));
   }, []);
 
   if (loading) {
@@ -21,8 +21,8 @@ export const Managers = () => {
 
   return (
     <>
-      {cvs.length ? (
-        <CVStack cvs={searched_cvs} sx={{ flex: "10 1" }} />
+      {managers.length ? (
+        <CVStack cvs={searched_managers} sx={{ flex: "10 1" }} />
       ) : (
         <Typography
           variant="h4"

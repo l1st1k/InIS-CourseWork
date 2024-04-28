@@ -55,7 +55,6 @@ export const auth_logout = async () => {
 
 const process_cookies = async (response) => {
     let resp = await response.json();
-    console.log(resp);
     let cookies = resp["cookies"]
     cookies.forEach(cookie => {
         document.cookie = cookie.replace("; HttpOnly", "");

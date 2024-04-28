@@ -1,5 +1,3 @@
-import {api} from "./api_base.js";
-
 export const get_all_cvs = async () => {
   try {
     const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/cvs`, {

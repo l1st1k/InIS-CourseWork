@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 
 export const LoginPage = () => {
     const [authType, setAuthType] = useState('company');
-    const { setAuthState } = useStore();
+    const { setAuthState, is_auth } = useStore();
     const navigate = useNavigate();
 
     const handleAuthTypeChange = (event) => {
