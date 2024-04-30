@@ -37,9 +37,7 @@ export const useStore = create((set, get) => ({
   async fetchManagers() {
     set({ loading: true });
 
-    //// API-on version
     const managers_response = await get_managers();
-    console.log(managers_response);
     set({ managers: managers_response });
     set({ searched_managers: managers_response });
 

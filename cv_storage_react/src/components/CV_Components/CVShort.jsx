@@ -43,7 +43,7 @@ const CV_Links = ({ cv_id, filename }) => {
     >
       <OpenButton cv_id={cv_id} />
       <DownloadButton cv_id={cv_id} filename={filename} />
-      <DeleteButton cv_id={cv_id} type={'cv'}/>
+      <DeleteButton id={cv_id} type={'cv'}/>
     </Stack>
   );
 };

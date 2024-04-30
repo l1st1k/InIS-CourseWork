@@ -38,7 +38,7 @@ const Manager_Links = ({ manager_id }) => {
       justifyContent={"end"}
       sx={{ flex: "2" }}
     >
-      <DeleteButton manager_id={manager_id} type={"manager"} />
+      <DeleteButton id={manager_id} type={"manager"} />
     </Stack>
   );
 };
