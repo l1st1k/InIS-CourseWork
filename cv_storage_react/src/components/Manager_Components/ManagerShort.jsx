@@ -1,16 +1,14 @@
 import React from "react";
 
-import { DeleteButton, OpenButton, DownloadButton } from "../UI/Buttons";
+import { DeleteButton } from "../UI/Buttons";
 import { Box, Stack, Typography } from "@mui/material";
 
-import { year_to_string } from "../../utils";
 
-export const CVShort = ({ cv, number }) => {
-  const filename = `CV_${cv.last_name}`;
+export const ManagerShort = ({ manager, number }) => {
   return (
     <Box
       component="article"
-      key={cv.cv_id}
+      key={manager.manager_id}
       sx={{
         bgcolor: "#363636",
         padding: 2,
@@ -21,19 +19,18 @@ export const CVShort = ({ cv, number }) => {
     >
       <Stack direction={"column"} alignItems="stretch" sx={{ flex: "8" }}>
         <Typography variant="body1" align="left">
-          {number}. {cv.first_name} {cv.last_name}, {cv.age}
+          {number}. {manager.email}
         </Typography>
-        <Typography variant="body1">{cv.major}</Typography>
         <Typography variant="body2">
-          {year_to_string(cv.years_of_exp)}
+          {`ID - ${manager.manager_id}`}
         </Typography>
       </Stack>
-      <CV_Links cv_id={cv.cv_id} filename={filename} />
+      <Manager_Links manager_id={manager.manager_id} />
     </Box>
   );
 };
 
-const CV_Links = ({ cv_id, filename }) => {
+const Manager_Links = ({ manager_id }) => {
   return (
     <Stack
       direction={"row"}
@@ -41,9 +38,7 @@ const CV_Links = ({ cv_id, filename }) => {
       justifyContent={"end"}
       sx={{ flex: "2" }}
     >
-      <OpenButton cv_id={cv_id} />
-      <DownloadButton cv_id={cv_id} filename={filename} />
-      <DeleteButton cv_id={cv_id} type={'cv'}/>
+      <DeleteButton manager_id={manager_id} type={"manager"} />
     </Stack>
   );
 };

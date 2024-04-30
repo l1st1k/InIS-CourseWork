@@ -2,18 +2,18 @@ import React from "react";
 import { Box, Divider, Stack } from "@mui/material";
 
 import { useStore } from "./../../store";
-import { CVShort } from "../CV_Components";
+import { ManagerShort } from "../Manager_Components";
 import { StyledPagination } from "../Pagination";
 import { SearchBar } from "../SearchBar";
 
-export const CVStack = ({ cvs }) => {
+export const ManagerStack= ({ managers }) => {
   const { page, items_per_page, number_of_pages } = useStore();
   const start = (page - 1) * items_per_page;
   const end = start + items_per_page;
 
   return (
     <Box>
-      <SearchBar type="cv"/>
+      <SearchBar type="manager" />
       <Stack
         direction="column"
         justifyContent="center"
@@ -28,10 +28,10 @@ export const CVStack = ({ cvs }) => {
           />
         }
       >
-        {cvs.slice(start, end).map((cv, index) => (
-          <CVShort
-            key={cv.cv_id}
-            cv={cv}
+        {managers.slice(start, end).map((manager, index) => (
+          <ManagerShort
+            key={manager.manager_id}
+            manager={manager}
             number={10 * (page - 1) + index + 1}
           />
         ))}
