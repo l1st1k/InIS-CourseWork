@@ -1,7 +1,6 @@
 import {api} from "./api_base.js";
 
 export const company_register = async (formData) => {
-    console.log(formData)
     try {
         const response = await api.post('company', {
             body: formData,

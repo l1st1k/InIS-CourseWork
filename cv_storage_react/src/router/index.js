@@ -1,4 +1,4 @@
-import {CVPage, UploadPage, HomePage, Catalog, LoginPage, RegistrationPage, Managers} from "../pages";
+import {CVPage, UploadPage, HomePage, Catalog, LoginPage, RegistrationPage, Managers, AddManager} from "../pages";
 
 export const routes = [
   { path: "/", component: HomePage },
@@ -8,6 +8,7 @@ export const routes = [
   { path: "/catalog", component: Catalog, private: true},
   { path: "/managers", component: Managers, private: true},
   { path: "/upload", component: UploadPage, private: true},
+  { path: "/add_manager", component: AddManager, private: true},
   { path: "/cv/:cv_id", component: CVPage, private: true},
 ];
 
