@@ -7,9 +7,9 @@ import { StyledPagination } from "../Pagination";
 import { SearchBar } from "../SearchBar";
 
 export const CVStack = ({ cvs }) => {
-  const { page, cv_per_page, number_of_pages } = useStore();
-  const start = (page - 1) * cv_per_page;
-  const end = start + cv_per_page;
+  const { page, items_per_page, number_of_pages } = useStore();
+  const start = (page - 1) * items_per_page;
+  const end = start + items_per_page;
 
   return (
     <Box>
