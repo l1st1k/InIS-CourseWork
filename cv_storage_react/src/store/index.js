@@ -78,6 +78,44 @@ export const useStore = create((set, get) => ({
     set({ loading: false });
   },
 
+  async searchManagers(str) {
+    set({ loading: true });
+
+    str = str.toLowerCase();
+    const searched_managers = get().managers.filter(
+        (manager) =>
+            manager.email.includes(str)
+    );
+    const page_amount = Math.ceil(searched_managers.length / get().items_per_page);
+    set({ searched_managers: searched_managers });
+
+    if (str !== "") {
+      set({ page: 1 });
+    }
+    set({ number_of_pages: page_amount });
+
+    set({ loading: false });
+  },
+
+  async searchVacancies(str) {
+    set({ loading: true });
+
+    str = str.toLowerCase();
+    const searched_vacancies = get().vacancies.filter(
+        (vacancy) =>
+           vacancy.skills.toLowerCase().includes(str) || vacancy.major.toLowerCase().includes(str)
+    );
+    const page_amount = Math.ceil(searched_vacancies.length / get().items_per_page);
+    set({ searched_vacancies: searched_vacancies });
+
+    if (str !== "") {
+      set({ page: 1 });
+    }
+    set({ number_of_pages: page_amount });
+
+    set({ loading: false });
+  },
+
   setPage(newPage) {
     set({ page: newPage });
   },

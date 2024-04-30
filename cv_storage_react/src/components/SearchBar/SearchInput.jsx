@@ -4,29 +4,28 @@ import SearchIcon from "@mui/icons-material/Search";
 
 import { useStore } from "../../store";
 
-export const SearchInput = (type) => {
+export const SearchInput = ({type}) => {
   const [searchTerm, setSearchTerm] = useState("");
-
 
   useEffect(() => {
     const timerId = setTimeout(() => {
-        if (type.type === "cv") {
+        if (type === "cv") {
             useStore
                 .getState()
                 .searchCVs(searchTerm)
-                .then(() => console.log(`Searched for: ${searchTerm}`));
+                .then(() => console.log(`Searched cvs for: ${searchTerm}`));
         }
-        if (type.type === "manager") {
+        if (type === "manager") {
             useStore
                 .getState()
                 .searchManagers(searchTerm)
-                .then(() => console.log(`Searched for: ${searchTerm}`));
+                .then(() => console.log(`Searched managers for: ${searchTerm}`));
         }
-        if (type.type === "vacancy") {
+        if (type === "vacancy") {
             useStore
                 .getState()
                 .searchVacancies(searchTerm)
-                .then(() => console.log(`Searched for: ${searchTerm}`));
+                .then(() => console.log(`Searched vacancies for: ${searchTerm}`));
         }
 
     }, 500);
