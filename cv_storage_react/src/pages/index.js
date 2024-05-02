@@ -3,7 +3,8 @@ export { HomePage } from "./HomePage.jsx";
 export { CVPage } from "./CVPage.jsx";
 export { UploadPage } from "./UploadPage.jsx";
 export { LoginPage } from "./LoginPage.jsx";
-export { RegistrationPage } from "./RegistrationPage.jsx"
-export { Managers } from "./Managers.jsx"
-export { AddManager } from "./AddManager.jsx"
-export { Vacancies } from "./Vacancies.jsx"
+export { RegistrationPage } from "./RegistrationPage.jsx";
+export { Managers } from "./Managers.jsx";
+export { AddManager } from "./AddManager.jsx";
+export { Vacancies } from "./Vacancies.jsx";
+export { VacancyPage } from "./VacancyPage.jsx";

@@ -6,7 +6,7 @@ import { VacancyShort } from "../Vacancy_Components";
 import { StyledPagination } from "../Pagination";
 import { SearchBar } from "../SearchBar";
 
-export const VacancyStack= ({ vacancies }) => {
+export const VacancyStack = ({ vacancies }) => {
   const { page, items_per_page, number_of_pages } = useStore();
   const start = (page - 1) * items_per_page;
   const end = start + items_per_page;
@@ -33,6 +33,7 @@ export const VacancyStack= ({ vacancies }) => {
             key={vacancy.vacancy_id}
             vacancy={vacancy}
             number={10 * (page - 1) + index + 1}
+            showButtons={true}
           />
         ))}
       </Stack>

@@ -21,12 +21,8 @@ export const CVPage = () => {
     const loadData = async () => {
       setLoading(true);
 
-      // API-on version
       const response = await get_single_cv(cv_id);
       setPerson(response.data);
-
-      // API-off version
-      // setPerson(single_cv_example);
 
       setLoading(false);
       return cv_id;

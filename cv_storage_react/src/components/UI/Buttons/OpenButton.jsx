@@ -3,8 +3,9 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { IconButton, Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
 
-export const OpenButton = ({ cv_id }) => {
-  const link = `/cv/${cv_id}`;
+export const OpenButton = ({ id, type }) => {
+  const prefix = type === "cv" ? "/cv/" : "/vacancy/";
+  const link = prefix + id;
   return (
     <IconButton sx={{ color: "#d2d2d2" }}>
       <Link to={link} style={{ color: "inherit" }}>
