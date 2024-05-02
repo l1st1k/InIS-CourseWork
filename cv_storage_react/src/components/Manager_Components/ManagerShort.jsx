@@ -2,9 +2,11 @@ import React from "react";
 
 import { DeleteButton } from "../UI/Buttons";
 import { Box, Stack, Typography } from "@mui/material";
-
+import { useStore } from "../../store";
 
 export const ManagerShort = ({ manager, number }) => {
+  const { is_company } = useStore();
+
   return (
     <Box
       component="article"
@@ -21,11 +23,9 @@ export const ManagerShort = ({ manager, number }) => {
         <Typography variant="body1" align="left">
           {number}. {manager.email}
         </Typography>
-        <Typography variant="body2">
-          {`ID - ${manager.manager_id}`}
-        </Typography>
+        <Typography variant="body2">{`ID - ${manager.manager_id}`}</Typography>
       </Stack>
-      <Manager_Links manager_id={manager.manager_id} />
+      {is_company && <Manager_Links manager_id={manager.manager_id} />}
     </Box>
   );
 };

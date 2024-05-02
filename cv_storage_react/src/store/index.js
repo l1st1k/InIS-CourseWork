@@ -3,6 +3,7 @@ import { get_all_cvs, get_managers, get_vacancies } from "../API";
 
 export const useStore = create((set, get) => ({
   is_auth: false,
+  is_company: false,
   cvs: [],
   searched_cvs: [],
   managers: [],
@@ -58,11 +59,13 @@ export const useStore = create((set, get) => ({
     set({ loading: true });
 
     const response = await get_vacancies();
-    console.log(response)
+    console.log(response);
     set({ vacancies: response });
     set({ searched_vacancies: response });
 
-    const page_amount = Math.ceil(get().vacancies.length / get().items_per_page);
+    const page_amount = Math.ceil(
+      get().vacancies.length / get().items_per_page
+    );
     set({ number_of_pages: page_amount });
 
     // Case: user deletes last vacancy on page
@@ -101,11 +104,12 @@ export const useStore = create((set, get) => ({
     set({ loading: true });
 
     str = str.toLowerCase();
-    const searched_managers = get().managers.filter(
-        (manager) =>
-            manager.email.includes(str)
+    const searched_managers = get().managers.filter((manager) =>
+      manager.email.includes(str)
     );
-    const page_amount = Math.ceil(searched_managers.length / get().items_per_page);
+    const page_amount = Math.ceil(
+      searched_managers.length / get().items_per_page
+    );
     set({ searched_managers: searched_managers });
 
     if (str !== "") {
@@ -121,10 +125,13 @@ export const useStore = create((set, get) => ({
 
     str = str.toLowerCase();
     const searched_vacancies = get().vacancies.filter(
-        (vacancy) =>
-           vacancy.skills.toLowerCase().includes(str) || vacancy.major.toLowerCase().includes(str)
+      (vacancy) =>
+        vacancy.skills.toLowerCase().includes(str) ||
+        vacancy.major.toLowerCase().includes(str)
     );
-    const page_amount = Math.ceil(searched_vacancies.length / get().items_per_page);
+    const page_amount = Math.ceil(
+      searched_vacancies.length / get().items_per_page
+    );
     set({ searched_vacancies: searched_vacancies });
 
     if (str !== "") {
@@ -141,6 +148,10 @@ export const useStore = create((set, get) => ({
 
   setAuthState(state) {
     set({ is_auth: state });
+  },
+
+  setIsCompany(state) {
+    set({ is_company: state });
   },
 
   setLoading(flag) {
