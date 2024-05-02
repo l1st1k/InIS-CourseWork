@@ -6,3 +6,4 @@ export { LoginPage } from "./LoginPage.jsx";
 export { RegistrationPage } from "./RegistrationPage.jsx"
 export { Managers } from "./Managers.jsx"
 export { AddManager } from "./AddManager.jsx"
+export { Vacancies } from "./Vacancies.jsx"

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { get_all_cvs, get_managers } from "../API";
+import { get_all_cvs, get_managers, get_vacancies } from "../API";
 
 export const useStore = create((set, get) => ({
   is_auth: false,
@@ -52,6 +52,27 @@ export const useStore = create((set, get) => ({
 
     set({ loading: false });
     return get().managers.length;
+  },
+
+  async fetchVacancies() {
+    set({ loading: true });
+
+    const response = await get_vacancies();
+    console.log(response)
+    set({ vacancies: response });
+    set({ searched_vacancies: response });
+
+    const page_amount = Math.ceil(get().vacancies.length / get().items_per_page);
+    set({ number_of_pages: page_amount });
+
+    // Case: user deletes last vacancy on page
+    // Behavior: we're moving user to the previous page
+    if (get().page > get().number_of_pages) {
+      set({ page: get().page - 1 });
+    }
+
+    set({ loading: false });
+    return get().vacancies.length;
   },
 
   async searchCVs(str) {

@@ -3,7 +3,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { IconButton, Tooltip } from "@mui/material";
 import "react-toastify/dist/ReactToastify.css";
 
-import { delete_cv, delete_manager } from "../../../API";
+import { delete_cv, delete_manager, delete_vacancy } from "../../../API";
 import { useToaster } from "../../../hooks";
 import { useStore } from "../../../store";
 
@@ -15,9 +15,9 @@ export const DeleteButton = ({ id, type }) => {
     if (type === "manager") {
         foo = delete_manager;
     }
-    // if (type === "vacancy") {
-    //     foo = delete_vacancy;
-    // }
+    if (type === "vacancy") {
+        foo = delete_vacancy;
+    }
   const call_delete = useToaster(
     foo,
     "Successfully deleted!",
@@ -44,13 +44,12 @@ export const DeleteButton = ({ id, type }) => {
                   .fetchManagers()
                   .then(() => console.log(`Fetched Managers after deleting`));
           }
-          // if (type === "vacancy") {
-          //     await useStore
-          //         .getState()
-          //         .fetchCVs()
-          //         .then(() => console.log(`Fetched CVs after deleting`));
-          // }
-
+          if (type === "vacancy") {
+              await useStore
+                  .getState()
+                  .fetchVacancies()
+                  .then(() => console.log(`Fetched Vacancies after deleting`));
+          }
       }}
     >
       <Tooltip title="Delete" placement="top">
