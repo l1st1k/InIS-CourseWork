@@ -6,6 +6,8 @@ import { Box, Stack, Typography } from "@mui/material";
 import { year_to_string } from "../../utils";
 
 export const CVShort = ({ cv, number }) => {
+  const numberStr = number ? `${number}. ` : "";
+
   const filename = `CV_${cv.last_name}`;
   return (
     <Box
@@ -21,7 +23,8 @@ export const CVShort = ({ cv, number }) => {
     >
       <Stack direction={"column"} alignItems="stretch" sx={{ flex: "8" }}>
         <Typography variant="body1" align="left">
-          {number}. {cv.first_name} {cv.last_name}, {cv.age}
+          {numberStr}
+          {cv.first_name} {cv.last_name}, {cv.age}
         </Typography>
         <Typography variant="body1">{cv.major}</Typography>
         <Typography variant="body2">

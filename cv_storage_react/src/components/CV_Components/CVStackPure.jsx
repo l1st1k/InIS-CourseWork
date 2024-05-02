@@ -11,7 +11,8 @@ export const CVStackPure = ({ cvs }) => {
         justifyContent="center"
         alignItems="center"
         spacing={2}
-        sx={{ width: 0.6 }}
+        width={"100%"}
+        // sx={{ width: }}
         divider={
           <Divider
             variant="middle"
