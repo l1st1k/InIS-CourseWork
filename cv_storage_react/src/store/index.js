@@ -59,7 +59,6 @@ export const useStore = create((set, get) => ({
     set({ loading: true });
 
     const response = await get_vacancies();
-    console.log(response);
     set({ vacancies: response });
     set({ searched_vacancies: response });
 

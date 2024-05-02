@@ -1,3 +1,5 @@
+import { api } from "./api_base.js";
+
 export const get_vacancies = async () => {
   try {
     const response = await fetch(
@@ -89,5 +91,30 @@ export const get_top_cvs = async (id) => {
   } catch (err) {
     console.log(err.message);
     return [];
+  }
+};
+
+export const add_vacancy = async (vacancyData) => {
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND_URL}/vacancy`,
+      {
+        method: "POST",
+        body: JSON.stringify(vacancyData),
+        headers: {
+          "Content-Type": "application/json",
+          Cooookie: document.cookie,
+        },
+      }
+    );
+
+    if (!response.ok) throw new Error("HTTP status " + response.status);
+
+    const responseBody = await response.json();
+
+    return responseBody.vacancy_id;
+  } catch (err) {
+    console.log(err);
+    return "Failed";
   }
 };

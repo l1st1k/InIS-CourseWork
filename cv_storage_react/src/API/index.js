@@ -16,4 +16,5 @@ export {
   delete_vacancy,
   get_single_vacancy,
   get_top_cvs,
+  add_vacancy,
 } from "./vacancies.js";

@@ -8,3 +8,4 @@ export { Managers } from "./Managers.jsx";
 export { AddManager } from "./AddManager.jsx";
 export { Vacancies } from "./Vacancies.jsx";
 export { VacancyPage } from "./VacancyPage.jsx";
+export { AddVacancy } from "./AddVacancy.jsx";
